@@ -14,6 +14,8 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
 - INDICE_SEGUIMIENTO.md
 - seguimiento-estudiantes.json (template base)
 - Carpetas `Planificaciones/` y `feedback/`
+- rubrica-evaluacion.md con 5 criterios ponderados y rúbrica de 4 niveles
+- glosario.md con 25 términos de arquitectura, diseño de interfaces, metodologías y agentes IA
 
 ---
 
