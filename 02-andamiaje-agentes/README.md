@@ -103,6 +103,78 @@ Cada agente produce archivos, vos los revisás, creás un PR, el docente lo revi
 
 ---
 
+---
+
+## 🧑‍🏫 ¡Conocé al @docente!
+
+Además de los 8 agentes de construcción, tenés disponible un **Arquitecto Docente** que podés invocar en cualquier momento:
+
+```
+@docente explicame esto: ADR
+```
+
+Este agente:
+
+- **Busca un ejemplo real** en tu repositorio
+- **Explica el concepto general** en lenguaje claro
+- **Justifica para qué sirve**, quién lo usa y por qué es importante
+- **Te da una analogía** para que nunca más lo olvides
+
+> 📖 Ver [`agente-docente.md`](./agente-docente.md) para instrucciones y el banco de analogías.
+
+Las analogías que vas descubriendo se agregan al banco compartido. Cada vez que encontrás una buena, podés abrir un Issue o un PR para que quede disponible para todos.
+
+---
+
+## 🤝 Filosofía Colaborativa
+
+### Este repositorio es de todos
+
+Cada estudiante tiene algo valioso para aportar. Tal vez descubriste una analogía que te hizo click. Tal vez modificaste un prompt del andamiaje para que funcione mejor. Tal vez creaste un **Agente 9** nuevo.
+
+**Todo eso se comparte.**
+
+```
+1. Descubriste algo útil
+       ↓
+2. Abrís un Issue o un PR
+       ↓
+3. Se revisa y se incorpora
+       ↓
+4. Todos los estudiantes (presentes y futuros) se benefician
+```
+
+### Cómo contribuir con agentes
+
+Si creaste un agente nuevo o mejoraste uno existente:
+
+1. **Discutilo primero**: abrí un Issue con la etiqueta `agente`
+2. **Creamos o modificamos** el prompt en `02-andamiaje-agentes/`
+3. **Hacés un PR** al repositorio principal [IES9018/proyecto-adi-2026](https://github.com/IES9018/proyecto-adi-2026)
+4. **Tu nombre queda registrado** como autor del agente
+
+> 📖 Guía completa de contribución en [`CONTRIBUTING.md`](../CONTRIBUTING.md)
+
+---
+
+## 📝 Proyecto Personal para Rendir
+
+Al final del año, cada estudiante debe rendir con un **proyecto personal** que demuestre todo lo aprendido.
+
+Es **altamente recomendable** que uses el andamiaje de agentes para construirlo:
+
+| Fase | Herramienta |
+|:-----|:------------|
+| Definir el proyecto | Prompt 1 (scoping) |
+| Construir el sistema | Prompt 2 (agentes 0 a 7) |
+| Entender conceptos | @docente |
+| Documentar decisiones | ADRs generados por el Arquitecto |
+| Presentar la defensa | Ej-06 (defensa oral) |
+
+> El proyecto que construyas con este andamiaje **es el mismo que presentás para rendir**. No es trabajo extra: es el trabajo bien hecho.
+
+---
+
 ## Qué Aprende el Estudiante con Este Método
 
 | Habilidad | Cómo se aprende |
@@ -124,3 +196,7 @@ Cada agente produce archivos, vos los revisás, creás un PR, el docente lo revi
 > Vos sos el director del equipo. Los agentes son tus asistentes.
 > Si no entendés lo que el agente produjo, no avances. Pedí explicación.
 > El aprendizaje está en la revisión, no en la generación automática.
+>
+> Este repositorio es tuyo también. Lo que aprendas, compartilo.
+> En 5 años, cuando estés trabajando en serio, tu analogía o tu agente
+> va a estar ayudando a otro estudiante que recién empieza.

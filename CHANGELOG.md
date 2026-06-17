@@ -22,6 +22,11 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
 - 04-github-workflow/: guía completa de trabajo colaborativo (repo, ramas, PRs, issues, CI/CD)
 - 05-ejercicios/: 6 ejercicios prácticos con prompts copiables y criterios de aprobación
 - README.md actualizado con nueva estructura y navegación
+- agente-docente.md (@docente): arquitecto docente para explicar conceptos con analogías + banco de analogías inicial
+- CONTRIBUTING.md: guía completa de contribución (Issues, PRs, nuevas analogías, agentes, herramientas)
+- instalacion-herramientas-cli.md: guía de instalación de 7 herramientas CLI con alternativas a npm
+- 02-andamiaje-agentes/README.md actualizado con @docente, filosofía colaborativa y proyecto personal
+- README.md actualizado con secciones de @docente, filosofía colaborativa, proyecto personal y herramientas CLI
 
 ---
 

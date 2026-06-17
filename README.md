@@ -23,6 +23,9 @@ Este repositorio contiene todo el material de clase para la materia **Arquitectu
 | `03-proyectos/` | 3 proyectos reales para aplicar la teoría (Gobernanza Digital, Fundación Messi, Crianceros) |
 | `04-github-workflow/` | Guía completa de trabajo colaborativo: repo, ramas, PRs, issues, CI/CD |
 | `05-ejercicios/` | 6 ejercicios prácticos con prompts listos para copiar y pegar en tu IA |
+| `02-andamiaje-agentes/agente-docente.md` | Arquitecto Docente (@docente) — explica conceptos con analogías y ejemplos de tu repo |
+| `instalacion-herramientas-cli.md` | Guía de instalación de herramientas CLI (opencode, Claude Code, Gemini, Aider...) |
+| `CONTRIBUTING.md` | Cómo contribuir al repositorio: Issues, PRs, nuevas analogías, nuevos agentes |
 | `glosario.md` | 25 términos de arquitectura con analogías y referencias |
 | `rubrica-evaluacion.md` | Criterios de evaluación con 5 dimensiones y 4 niveles |
 | `LISTA_ESTUDIANTES.md` | Repositorios de todos los estudiantes |
@@ -110,6 +113,66 @@ Cada agente produce archivos, vos los revisás, creás un PR, y recién después
 - Herramientas para diseño de interfaces
 - Integración de distintas tecnologías
 - CI/CD, Docker, GitHub Actions
+
+---
+
+---
+
+## 🧑‍🏫 El Arquitecto Docente (@docente)
+
+En cualquier momento podés invocar al **Arquitecto Docente** para que te explique un concepto:
+
+```
+@docente explicame esto: ADR
+```
+
+Este agente busca un ejemplo real en **tu propio repositorio**, explica el concepto con una **analogía**, justifica para qué sirve, quién lo usa y por qué es importante.
+
+> 📖 Ver [`02-andamiaje-agentes/agente-docente.md`](./02-andamiaje-agentes/agente-docente.md)
+
+Las analogías que descubrís se agregan al banco compartido. **Abrí un Issue o un PR** para dejar tu aporte.
+
+---
+
+## 🤝 Filosofía Colaborativa
+
+Este repositorio es de **todos los estudiantes**, pasado, presente y futuro.
+
+- ¿Encontraste un error? **Abrí un Issue.**
+- ¿Descubriste una analogía? **Compartila con un PR.**
+- ¿Creaste un agente nuevo o mejoraste uno existente? **Subilo para que todos lo usen.**
+
+Cada contribución, por chica que sea, mejora el aprendizaje de quienes vienen después.
+
+> 📖 Cómo contribuir en [`CONTRIBUTING.md`](./CONTRIBUTING.md)
+
+---
+
+## 📝 Proyecto Personal
+
+Al final del año **rendís con un proyecto personal**. Es aconsejable que lo construyas usando el andamiaje de agentes:
+
+1. **Definilo** con el Prompt 1 (scoping)
+2. **Construílo** con el Prompt 2 (8 agentes)
+3. **Entendé los conceptos** invocando al @docente
+4. **Documentá las decisiones** con ADRs del agente Arquitecto
+5. **Presentá la defensa oral** con el Ejercicio 6
+
+> El proyecto que armás con el andamiaje **es el mismo que presentás para rendir**. No es trabajo extra.
+
+---
+
+## 🛠️ Herramientas CLI de IA
+
+Para usar los prompts del andamiaje necesitás un asistente de IA en tu terminal.
+
+| Herramienta | Instalación rápida |
+|:------------|:-------------------|
+| **opencode** | `curl -fsSL https://opencode.ai/install \| bash` |
+| **Gemini CLI** | `npm install -g @google/gemini-cli` |
+| **Claude Code** | `npm install -g @anthropic-ai/claude-code` |
+
+> 📖 Guía completa con 7 herramientas, alternativas sin npm y solución de problemas en [`instalacion-herramientas-cli.md`](./instalacion-herramientas-cli.md)
 
 ---
 
