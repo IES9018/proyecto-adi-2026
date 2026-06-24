@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: ./08_CODIGO_FUENTE/backend
+      dockerfile: Dockerfile
+    container_name: gobernanza-backend
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///data/gobernanza.db
+      - SECRET_KEY=${SECRET_KEY:-dev-secret-key-change-in-production}
+      - ENVIRONMENT=development
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./08_CODIGO_FUENTE/frontend
+      dockerfile: Dockerfile
+    container_name: gobernanza-frontend
+    ports:
+      - "127.0.0.1:3000:3000"
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    depends_on:
+      - backend
+    restart: unless-stopped
