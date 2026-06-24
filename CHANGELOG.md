@@ -27,6 +27,12 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
 - instalacion-herramientas-cli.md: guía de instalación de 7 herramientas CLI con alternativas a npm
 - 02-andamiaje-agentes/README.md actualizado con @docente, filosofía colaborativa y proyecto personal
 - README.md actualizado con secciones de @docente, filosofía colaborativa, proyecto personal y herramientas CLI
+- .github/ISSUE_TEMPLATE/: templates para issues de mejora, analogías y errores
+- .github/PULL_REQUEST_TEMPLATE.md: template para pull requests
+- 05-ejercicios/README.md actualizado con clase sugerida por ejercicio y recorrido pedagógico
+- 06-agentes-cli/: nuevo módulo completo con tutorial de uso, catálogo de 11 agentes y 6 agentes listos para copiar (@arquitecto, @backend, @docente, @documentation, @testing, @review)
+- 03-proyectos/A-gobernanza-digital/README.md: convertido en proyecto ejemplar transversal con estructura completa, analogías @docente integradas por materia, y guía de estudio para estudiantes de ADI, PP III, Programación III, BD y Laboratorio de Servidores
+- README.md actualizado con referencias a 06-agentes-cli y .github/
 
 ---
 

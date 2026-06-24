@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 Leer antes de abrir un Issue
+    url: https://github.com/IES9018/proyecto-adi-2026/blob/main/CONTRIBUTING.md
+    about: Revisá la guía de contribución antes de abrir un Issue.

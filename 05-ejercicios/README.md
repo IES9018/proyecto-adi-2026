@@ -18,13 +18,30 @@ Cada ejercicio consiste en un **prompt listo para copiar y pegar** en tu termina
 
 ---
 
+## 🗺️ Recorrido Pedagógico
+
+Los ejercicios siguen el ciclo natural del desarrollo de software:
+
+```
+Clase 1:  Ej 1 (Scoping) → Ej 2 (C4 Contexto)
+Clase 2:  Ej 3 (ADR) → profundizás arquitectura
+Clase 3:  Ej 4 (Modelo de Dominio) → Ej 5 (Wireframe)
+Clase 4+: Ej 6 (Defensa Oral) — práctica para el final
+```
+
+> Estos ejercicios están diseñados para que los hagas **en orden**. Cada uno construye sobre el anterior.
+
+Tus entregas de ejercicios se hacen en **tu repositorio personal** (el mismo de tu proyecto), no en el repo de la organización. Cada ejercicio es un PR.
+
+---
+
 ## 📋 Lista de Ejercicios
 
-| # | Ejercicio | Tema | Tiempo estimado |
-|:-:|:----------|:-----|:----------------:|
-| 1 | [Entrevista con el Arquitecto](./ej-01-entrevista-arquitecto.md) | Scoping del proyecto | 20 min |
-| 2 | [Diagrama C4 de Contexto](./ej-02-diagrama-c4.md) | Arquitectura nivel 1 | 30 min |
-| 3 | [Escribir un ADR](./ej-03-adr-decision.md) | Decisiones arquitectónicas | 25 min |
-| 4 | [Modelo de Dominio](./ej-04-modelo-dominio.md) | Entidades y relaciones | 30 min |
-| 5 | [Wireframe de Interfaz](./ej-05-wireframe-interfaz.md) | Diseño de UI/UX | 25 min |
-| 6 | [Defensa Oral Simulada](./ej-06-defensa-arquitectura.md) | Preparación para el oral | 15 min |
+| # | Ejercicio | Tema | Tiempo estimado | Clase sugerida |
+|:-:|:----------|:-----|:----------------:|:--------------:|
+| 1 | [Entrevista con el Arquitecto](./ej-01-entrevista-arquitecto.md) | Scoping del proyecto | 20 min | Clase 1 |
+| 2 | [Diagrama C4 de Contexto](./ej-02-diagrama-c4.md) | Arquitectura nivel 1 | 30 min | Clase 1-2 |
+| 3 | [Escribir un ADR](./ej-03-adr-decision.md) | Decisiones arquitectónicas | 25 min | Clase 2 |
+| 4 | [Modelo de Dominio](./ej-04-modelo-dominio.md) | Entidades y relaciones | 30 min | Clase 3 |
+| 5 | [Wireframe de Interfaz](./ej-05-wireframe-interfaz.md) | Diseño de UI/UX | 25 min | Clase 3-4 |
+| 6 | [Defensa Oral Simulada](./ej-06-defensa-arquitectura.md) | Preparación para el oral | 15 min | Clase 5+ |

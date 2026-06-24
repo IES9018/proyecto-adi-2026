@@ -20,9 +20,11 @@ Este repositorio contiene todo el material de clase para la materia **Arquitectu
 |:----------------|:---------------|
 | `01-teoria/` | Fundamentos: arquitectura, patrones, diseño de interfaces, estándares globales, IA como aliado |
 | `02-andamiaje-agentes/` | Metodología de agentes IA: 2 prompts, flujo de 8 agentes, ejemplos reales |
-| `03-proyectos/` | 3 proyectos reales para aplicar la teoría (Gobernanza Digital, Fundación Messi, Crianceros) |
+| `03-proyectos/` | 3 proyectos reales (Gobernanza Digital, Fundación Messi, Crianceros) — Gobernanza es el proyecto ejemplar transversal |
 | `04-github-workflow/` | Guía completa de trabajo colaborativo: repo, ramas, PRs, issues, CI/CD |
-| `05-ejercicios/` | 6 ejercicios prácticos con prompts listos para copiar y pegar en tu IA |
+| `05-ejercicios/` | 6 ejercicios prácticos con prompts listos para copiar y pegar + linkage a clases |
+| `06-agentes-cli/` | Catálogo de agentes CLI (@arquitecto, @backend, @docente, @testing, @review...) + tutorial de uso |
+| `.github/` | Issue templates (mejora, analogía, error) y Pull Request template |
 | `02-andamiaje-agentes/agente-docente.md` | Arquitecto Docente (@docente) — explica conceptos con analogías y ejemplos de tu repo |
 | `instalacion-herramientas-cli.md` | Guía de instalación de herramientas CLI (opencode, Claude Code, Gemini, Aider...) |
 | `CONTRIBUTING.md` | Cómo contribuir al repositorio: Issues, PRs, nuevas analogías, nuevos agentes |
