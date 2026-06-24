@@ -11,8 +11,17 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from pydantic import BaseModel
 from sqlmodel import Session
 
-from src.application.solicitudes import EvaluarTecnicamente, EmitirResolucion
-from src.domain.models import Usuario, EvaluacionTecnica, Resolucion
+from src.application.solicitudes import (
+    EvaluarTecnicamente,
+    EmitirResolucion,
+    EvaluarInstitucionalmente,
+)
+from src.domain.models import (
+    Usuario,
+    EvaluacionTecnica,
+    EvaluacionInstitucional,
+    Resolucion,
+)
 from src.infrastructure.repos import SolicitudRepositorySQL
 from src.web.dependencies import get_db, get_admin, get_directivo, get_current_user
 
@@ -74,6 +83,27 @@ class ResolucionResponse(BaseModel):
     fecha: datetime
 
 
+class EvaluacionInstitucionalRequest(BaseModel):
+    """Checklist de evaluación institucional (3 ítems)."""
+    alineacion_educativa: bool = False
+    contribucion_perfil: bool = False
+    riesgo_institucional: bool = False
+    observaciones: Optional[str] = None
+
+
+class EvaluacionInstitucionalResponse(BaseModel):
+    """Respuesta con el resultado de la evaluación institucional."""
+    id: str
+    solicitud_id: str
+    evaluador_email: str
+    alineacion_educativa: Optional[bool] = None
+    contribucion_perfil: Optional[bool] = None
+    riesgo_institucional: Optional[bool] = None
+    dictamen: Optional[str] = None
+    observaciones: Optional[str] = None
+    fecha: datetime
+
+
 def _evaluacion_a_response(e: EvaluacionTecnica) -> EvaluacionTecnicaResponse:
     """Convierte entidad EvaluacionTecnica a DTO de respuesta."""
     return EvaluacionTecnicaResponse(
@@ -106,6 +136,23 @@ def _resolucion_a_response(r: Resolucion) -> ResolucionResponse:
         fundamentos=r.fundamentos,
         condiciones=r.condiciones,
         fecha=r.fecha,
+    )
+
+
+def _evaluacion_institucional_a_response(
+    e: EvaluacionInstitucional,
+) -> EvaluacionInstitucionalResponse:
+    """Convierte entidad EvaluacionInstitucional a DTO de respuesta."""
+    return EvaluacionInstitucionalResponse(
+        id=e.id,
+        solicitud_id=e.solicitud_id,
+        evaluador_email=e.evaluador_email,
+        alineacion_educativa=e.alineacion_educativa,
+        contribucion_perfil=e.contribucion_perfil,
+        riesgo_institucional=e.riesgo_institucional,
+        dictamen=e.dictamen.value if e.dictamen else None,
+        observaciones=e.observaciones,
+        fecha=e.fecha,
     )
 
 
@@ -172,6 +219,41 @@ def emitir_resolucion(
             evaluador_email=directivo.email,
         )
         return _resolucion_a_response(resolucion)
+    except ValueError as e:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(e))
+
+
+@router.post(
+    "/{solicitud_id}/evaluar-institucional",
+    response_model=EvaluacionInstitucionalResponse,
+)
+def evaluar_institucionalmente(
+    solicitud_id: str,
+    datos: EvaluacionInstitucionalRequest,
+    directivo: Usuario = Depends(get_directivo),
+    db: Session = Depends(get_db),
+) -> EvaluacionInstitucionalResponse:
+    """Evalúa institucionalmente una solicitud (solo directivo).
+
+    Calcula el dictamen automáticamente:
+    - 3/3 → favorable
+    - 2/3 → condicional
+    - 0-1/3 → desfavorable
+
+    Si es desfavorable, la solicitud pasa a RECHAZADA.
+    Si es favorable o condicional, se mantiene en PENDIENTE_INSTITUCIONAL.
+    """
+    repo = SolicitudRepositorySQL(db)
+    caso_uso = EvaluarInstitucionalmente(repo)
+    try:
+        checklist = datos.model_dump(exclude={"observaciones"})
+        evaluacion = caso_uso.ejecutar(
+            solicitud_id=solicitud_id,
+            checklist=checklist,
+            observaciones=datos.observaciones,
+            evaluador_email=directivo.email,
+        )
+        return _evaluacion_institucional_a_response(evaluacion)
     except ValueError as e:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(e))
 

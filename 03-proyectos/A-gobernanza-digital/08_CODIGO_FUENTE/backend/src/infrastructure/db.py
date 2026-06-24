@@ -230,6 +230,81 @@ class EvaluacionInstitucionalORM(SQLModel, table=True):
     observaciones: Optional[str] = None
     fecha: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
+    def to_domain(self) -> "EvaluacionInstitucional":
+        """Convierte a entidad de dominio."""
+        from src.domain.models import (
+            EvaluacionInstitucional as EIDominio,
+            DictamenInstitucional,
+        )
+        return EIDominio(
+            id=self.id,
+            solicitud_id=self.solicitud_id,
+            evaluador_email=self.evaluador_email,
+            alineacion_educativa=self.alineacion_educativa,
+            contribucion_perfil=self.contribucion_perfil,
+            riesgo_institucional=self.riesgo_institucional,
+            dictamen=DictamenInstitucional(self.dictamen) if self.dictamen else None,
+            observaciones=self.observaciones,
+            fecha=self.fecha,
+        )
+
+    @classmethod
+    def from_domain(cls, evaluacion: "EvaluacionInstitucional") -> "EvaluacionInstitucionalORM":
+        """Crea desde entidad de dominio."""
+        return cls(
+            id=evaluacion.id,
+            solicitud_id=evaluacion.solicitud_id,
+            evaluador_email=evaluacion.evaluador_email,
+            alineacion_educativa=evaluacion.alineacion_educativa,
+            contribucion_perfil=evaluacion.contribucion_perfil,
+            riesgo_institucional=evaluacion.riesgo_institucional,
+            dictamen=evaluacion.dictamen.value if evaluacion.dictamen else None,
+            observaciones=evaluacion.observaciones,
+            fecha=evaluacion.fecha,
+        )
+
+
+class AuditoriaORM(SQLModel, table=True):
+    """Tabla de registros de auditoría de cambios en solicitudes."""
+    __tablename__ = "auditoria"
+
+    id: str = Field(primary_key=True)
+    solicitud_id: str = Field(foreign_key="solicitud.id")
+    usuario_email: str
+    rol: str
+    campo_modificado: str
+    valor_anterior: Optional[str] = None
+    valor_nuevo: Optional[str] = None
+    timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+    def to_domain(self) -> "Auditoria":
+        """Convierte a entidad de dominio."""
+        from src.domain.models import Auditoria as AuditoriaDominio
+        return AuditoriaDominio(
+            id=self.id,
+            solicitud_id=self.solicitud_id,
+            usuario_email=self.usuario_email,
+            rol=self.rol,
+            campo_modificado=self.campo_modificado,
+            valor_anterior=self.valor_anterior,
+            valor_nuevo=self.valor_nuevo,
+            timestamp=self.timestamp,
+        )
+
+    @classmethod
+    def from_domain(cls, auditoria: "Auditoria") -> "AuditoriaORM":
+        """Crea desde entidad de dominio."""
+        return cls(
+            id=auditoria.id,
+            solicitud_id=auditoria.solicitud_id,
+            usuario_email=auditoria.usuario_email,
+            rol=auditoria.rol,
+            campo_modificado=auditoria.campo_modificado,
+            valor_anterior=auditoria.valor_anterior,
+            valor_nuevo=auditoria.valor_nuevo,
+            timestamp=auditoria.timestamp,
+        )
+
 
 class ResolucionORM(SQLModel, table=True):
     """Tabla de resoluciones finales."""

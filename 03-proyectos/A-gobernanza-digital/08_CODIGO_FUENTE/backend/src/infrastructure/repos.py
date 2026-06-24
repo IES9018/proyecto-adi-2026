@@ -12,7 +12,9 @@ from src.domain.models import (
     Solicitud,
     Usuario,
     EvaluacionTecnica,
+    EvaluacionInstitucional,
     Resolucion,
+    Auditoria,
     EstadoSolicitud,
     Rol,
 )
@@ -21,7 +23,9 @@ from src.infrastructure.db import (
     SolicitudORM,
     UsuarioORM,
     EvaluacionTecnicaORM,
+    EvaluacionInstitucionalORM,
     ResolucionORM,
+    AuditoriaORM,
 )
 
 
@@ -111,6 +115,31 @@ class SolicitudRepositorySQL(SolicitudRepository):
     def obtener_resolucion(self, solicitud_id: str) -> Optional[Resolucion]:
         statement = select(ResolucionORM).where(
             ResolucionORM.solicitud_id == solicitud_id
+        )
+        orm = self.session.exec(statement).first()
+        return orm.to_domain() if orm else None
+
+    def guardar_auditoria(self, auditoria: Auditoria) -> Auditoria:
+        orm = AuditoriaORM.from_domain(auditoria)
+        self.session.add(orm)
+        self.session.commit()
+        self.session.refresh(orm)
+        return orm.to_domain()
+
+    def guardar_evaluacion_institucional(
+        self, evaluacion: EvaluacionInstitucional
+    ) -> EvaluacionInstitucional:
+        orm = EvaluacionInstitucionalORM.from_domain(evaluacion)
+        orm = self.session.merge(orm)
+        self.session.commit()
+        self.session.refresh(orm)
+        return orm.to_domain()
+
+    def buscar_evaluacion_institucional(
+        self, solicitud_id: str
+    ) -> Optional[EvaluacionInstitucional]:
+        statement = select(EvaluacionInstitucionalORM).where(
+            EvaluacionInstitucionalORM.solicitud_id == solicitud_id
         )
         orm = self.session.exec(statement).first()
         return orm.to_domain() if orm else None

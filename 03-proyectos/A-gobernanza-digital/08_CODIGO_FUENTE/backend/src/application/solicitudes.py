@@ -11,9 +11,12 @@ from datetime import datetime, timezone
 from src.domain.models import (
     Solicitud,
     EvaluacionTecnica,
+    EvaluacionInstitucional,
     Resolucion,
+    Auditoria,
     EstadoSolicitud,
     DictamenTecnico,
+    DictamenInstitucional,
     DecisionResolucion,
 )
 from src.domain.ports import SolicitudRepository
@@ -96,7 +99,18 @@ class CrearSolicitud:
             actualizada_en=ahora,
         )
 
-        return self.repo.guardar(solicitud)
+        solicitud = self.repo.guardar(solicitud)
+
+        self.repo.guardar_auditoria(Auditoria(
+            solicitud_id=solicitud.id,
+            usuario_email=solicitante_email,
+            rol="solicitante",
+            campo_modificado="creacion",
+            valor_anterior=None,
+            valor_nuevo=solicitud.estado.value,
+        ))
+
+        return solicitud
 
 
 class EvaluarTecnicamente:
@@ -184,6 +198,21 @@ class EvaluarTecnicamente:
                 solicitud_id, EstadoSolicitud.PENDIENTE_INSTITUCIONAL
             )
 
+        # ── Auditoría ───────────────────────────────────────────────────
+        nuevo_estado_valor = (
+            EstadoSolicitud.RECHAZADA.value
+            if dictamen == DictamenTecnico.NO_APTO
+            else EstadoSolicitud.PENDIENTE_INSTITUCIONAL.value
+        )
+        self.repo.guardar_auditoria(Auditoria(
+            solicitud_id=solicitud_id,
+            usuario_email=evaluador_email,
+            rol="admin_tecnico",
+            campo_modificado="estado",
+            valor_anterior=EstadoSolicitud.PENDIENTE_TECNICA.value,
+            valor_nuevo=nuevo_estado_valor,
+        ))
+
         return evaluacion
 
 
@@ -260,4 +289,93 @@ class EmitirResolucion:
         )
         self.repo.actualizar_estado(solicitud_id, nuevo_estado)
 
+        # ── Auditoría ───────────────────────────────────────────────────
+        self.repo.guardar_auditoria(Auditoria(
+            solicitud_id=solicitud_id,
+            usuario_email=evaluador_email,
+            rol="directivo",
+            campo_modificado="estado",
+            valor_anterior=EstadoSolicitud.PENDIENTE_INSTITUCIONAL.value,
+            valor_nuevo=nuevo_estado.value,
+        ))
+
         return resolucion
+
+
+class EvaluarInstitucionalmente:
+    """Caso de uso: Evaluar institucionalmente una solicitud.
+
+    Solo puede ejecutarse si la solicitud está en estado
+    PENDIENTE_INSTITUCIONAL. Solo el rol directivo puede evaluar.
+    Evalúa 3 criterios institucionales y emite un dictamen:
+      - 3/3 → FAVORABLE
+      - 2/3 → CONDICIONAL
+      - 0-1/3 → DESFAVORABLE
+
+    Si el dictamen es DESFAVORABLE, la solicitud pasa a RECHAZADA.
+    En caso contrario, se mantiene en PENDIENTE_INSTITUCIONAL.
+    """
+
+    def __init__(self, repo: SolicitudRepository) -> None:
+        self.repo = repo
+
+    def ejecutar(
+        self,
+        solicitud_id: str,
+        checklist: dict,
+        observaciones: str | None,
+        evaluador_email: str,
+    ) -> EvaluacionInstitucional:
+        solicitud = self.repo.buscar_por_id(solicitud_id)
+        if not solicitud:
+            raise ValueError(f"No existe la solicitud con ID {solicitud_id}.")
+
+        if solicitud.estado != EstadoSolicitud.PENDIENTE_INSTITUCIONAL:
+            raise ValueError(
+                f"La solicitud debe estar en estado PENDIENTE_INSTITUCIONAL, "
+                f"pero está en {solicitud.estado.value}."
+            )
+
+        items_clave = [
+            "alineacion_educativa",
+            "contribucion_perfil",
+            "riesgo_institucional",
+        ]
+        cumplidos = sum(1 for k in items_clave if checklist.get(k))
+        total = len(items_clave)
+
+        if cumplidos == total:
+            dictamen = DictamenInstitucional.FAVORABLE
+        elif cumplidos >= 2:
+            dictamen = DictamenInstitucional.CONDICIONAL
+        else:
+            dictamen = DictamenInstitucional.DESFAVORABLE
+
+        evaluacion = EvaluacionInstitucional(
+            id=str(uuid.uuid4()),
+            solicitud_id=solicitud_id,
+            evaluador_email=evaluador_email,
+            **{k: checklist.get(k) for k in items_clave},
+            dictamen=dictamen,
+            observaciones=observaciones,
+            fecha=_ahora(),
+        )
+
+        evaluacion = self.repo.guardar_evaluacion_institucional(evaluacion)
+
+        if dictamen == DictamenInstitucional.DESFAVORABLE:
+            self.repo.actualizar_estado(solicitud_id, EstadoSolicitud.RECHAZADA)
+            nuevo_estado_valor = EstadoSolicitud.RECHAZADA.value
+        else:
+            nuevo_estado_valor = EstadoSolicitud.PENDIENTE_INSTITUCIONAL.value
+
+        self.repo.guardar_auditoria(Auditoria(
+            solicitud_id=solicitud_id,
+            usuario_email=evaluador_email,
+            rol="directivo",
+            campo_modificado="evaluacion_institucional",
+            valor_anterior=EstadoSolicitud.PENDIENTE_INSTITUCIONAL.value,
+            valor_nuevo=nuevo_estado_valor,
+        ))
+
+        return evaluacion

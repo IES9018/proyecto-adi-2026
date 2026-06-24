@@ -14,6 +14,7 @@ from src.domain.models import (
     EvaluacionTecnica,
     EvaluacionInstitucional,
     Resolucion,
+    Auditoria,
     EstadoSolicitud,
 )
 
@@ -139,6 +140,46 @@ class SolicitudRepository(ABC):
 
         Returns:
             La resolución o None si no existe.
+        """
+        ...
+
+    @abstractmethod
+    def guardar_auditoria(self, auditoria: Auditoria) -> Auditoria:
+        """Persiste un registro de auditoría.
+
+        Args:
+            auditoria: Entidad Auditoria a persistir.
+
+        Returns:
+            El registro de auditoría persistido.
+        """
+        ...
+
+    @abstractmethod
+    def guardar_evaluacion_institucional(
+        self, evaluacion: EvaluacionInstitucional
+    ) -> EvaluacionInstitucional:
+        """Persiste una evaluación institucional.
+
+        Args:
+            evaluacion: Entidad EvaluacionInstitucional a persistir.
+
+        Returns:
+            La evaluación institucional persistida.
+        """
+        ...
+
+    @abstractmethod
+    def buscar_evaluacion_institucional(
+        self, solicitud_id: str
+    ) -> Optional[EvaluacionInstitucional]:
+        """Busca la evaluación institucional de una solicitud.
+
+        Args:
+            solicitud_id: ID de la solicitud.
+
+        Returns:
+            La evaluación institucional o None si no existe.
         """
         ...
 

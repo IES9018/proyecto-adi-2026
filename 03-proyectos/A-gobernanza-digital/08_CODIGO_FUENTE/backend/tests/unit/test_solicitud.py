@@ -10,7 +10,9 @@ from src.domain.models import (
     Solicitud,
     EstadoSolicitud,
     EvaluacionTecnica,
+    EvaluacionInstitucional,
     Resolucion,
+    Auditoria,
 )
 from src.domain.ports import SolicitudRepository
 from src.application.solicitudes import CrearSolicitud
@@ -29,6 +31,8 @@ class InMemorySolicitudRepo(SolicitudRepository):
         self.solicitudes: dict[str, Solicitud] = {}
         self.evaluaciones: dict[str, EvaluacionTecnica] = {}
         self.resoluciones: dict[str, Resolucion] = {}
+        self.evaluaciones_institucionales: dict[str, EvaluacionInstitucional] = {}
+        self.auditorias: list[Auditoria] = []
 
     def guardar(self, solicitud: Solicitud) -> Solicitud:
         self.solicitudes[solicitud.id] = solicitud
@@ -79,6 +83,24 @@ class InMemorySolicitudRepo(SolicitudRepository):
         for r in self.resoluciones.values():
             if r.solicitud_id == solicitud_id:
                 return r
+        return None
+
+    def guardar_auditoria(self, auditoria: Auditoria) -> Auditoria:
+        self.auditorias.append(auditoria)
+        return auditoria
+
+    def guardar_evaluacion_institucional(
+        self, evaluacion: EvaluacionInstitucional
+    ) -> EvaluacionInstitucional:
+        self.evaluaciones_institucionales[evaluacion.id] = evaluacion
+        return evaluacion
+
+    def buscar_evaluacion_institucional(
+        self, solicitud_id: str
+    ) -> Optional[EvaluacionInstitucional]:
+        for e in self.evaluaciones_institucionales.values():
+            if e.solicitud_id == solicitud_id:
+                return e
         return None
 
 

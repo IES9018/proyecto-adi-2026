@@ -1,7 +1,8 @@
-"""Rutas de autenticación — login JWT y perfil del usuario."""
-
-from fastapi import APIRouter, Depends, HTTPException, status
+import os
+from fastapi import APIRouter, Depends, HTTPException, Request, status
 from pydantic import BaseModel
+from slowapi import Limiter
+from slowapi.util import get_remote_address
 from sqlmodel import Session
 
 from src.application.auth import LoginUsuario
@@ -10,6 +11,9 @@ from src.infrastructure.repos import UsuarioRepositorySQL
 from src.web.dependencies import get_current_user, get_db
 
 router = APIRouter()
+
+_LIMIT = "100/minute" if os.getenv("ENVIRONMENT") == "testing" else "5/minute"
+limiter = Limiter(key_func=get_remote_address)
 
 
 # ─── Schemas ─────────────────────────────────────────────────────────────────
@@ -36,7 +40,8 @@ class UsuarioResponse(BaseModel):
 # ─── Endpoints ───────────────────────────────────────────────────────────────
 
 @router.post("/login", response_model=LoginResponse)
-def login(datos: LoginRequest, db: Session = Depends(get_db)) -> LoginResponse:
+@limiter.limit(_LIMIT)
+def login(request: Request, datos: LoginRequest, db: Session = Depends(get_db)) -> LoginResponse:
     """Inicia sesión con email y contraseña.
 
     Devuelve un access token JWT con 30 minutos de validez
