@@ -1,0 +1,15 @@
+# ARNÉS OPENCODE — ADI · CICLO 2026 (IES9018)
+
+## 1. Reglas de Negocio Inmutables
+- Los repos de alumnos pertenecen a la org `IES9018` con formato `<nombre_alumno>-<nombre_proyecto>`.
+- Prohibición absoluta de forks: creación directa en la organización.
+- El docente audita como Capataz/Arquitecto de Obra mediante CLI determinista.
+
+## 2. Flujo Spec-Driven Development (Obligatorio)
+- Toda funcionalidad nace en una `SPEC.md` basada en `templates/SPEC-TEMPLATE.md`, aprobada antes de codificar.
+- Toda decisión arquitectónica se registra en `docs/adr/` usando `templates/ADR-TEMPLATE.md`.
+- Commits convencionales (`feat|fix|docs|chore: descripción`) y PRs con checklist de calidad.
+
+## 3. Configuración Exclusiva del Motor Local
+- OpenCode es el único motor autorizado; su configuración exclusiva son este archivo e `INSTRUCTIONS.md`.
+- Cualquier otro archivo de configuración de agentes queda fuera del estándar organizacional y se observa en auditoría.
