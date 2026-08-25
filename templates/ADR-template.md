@@ -1,17 +1,17 @@
-# ADR-000: [T├¡tulo Corto de la Decisi├│n Arquitectural]
+# ADR-000: [Título Corto de la Decisión Arquitectural]
 
 **Fecha:** YYYY-MM-DD
 **Estado:** Propuesto | Aceptado | Deprecado
 
 ## Contexto
-┬┐Cu├íl es la necesidad o el problema t├®cnico que requiere tomar esta decisi├│n?
+¿Cuál es la necesidad o el problema técnico que requiere tomar esta decisión?
 
-## Decisi├│n
-Describir la soluci├│n elegida de forma clara y directa.
+## Decisión
+Describir la solución elegida de forma clara y directa.
 
 ## Alternativas Descartadas
-- **Opci├│n A:** Por qu├® no se eligi├│.
-- **Opci├│n B:** Por qu├® no se eligi├│.
+- **Opción A:** Por qué no se eligió.
+- **Opción B:** Por qué no se eligió.
 
 ## Consecuencias
 - **Positivas:** ...

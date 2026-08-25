@@ -1,40 +1,38 @@
-### 🏫 **Institución:** IES 9-018 "Gobernador Celso Jaque"
-### 📚 **Carrera:** Tecnicatura Superior en Desarrollo de Software
-### 📖 **Materia:** Arquitectura y Diseño de Interfaces
-### 👨‍🏫 **Profesor:** Paulo Alvarez
----
-# Directorio de Proyectos del Curso 2026
+# 📋 Lista de Estudiantes — Modelo 2026 (repos individuales en la organización)
 
-Este documento centraliza los repositorios de todos los estudiantes. Mismo flujo que en 2025: fork del repositorio base, trabajo personal, entrega por Pull Request.
+> **Reglas vigentes:** sin forks · repo propio dentro de [`IES9018`](https://github.com/IES9018) · nomenclatura obligatoria `<nombre_alumno>-<nombre_proyecto>` (público)
+> Fuente de membresía verificada contra la org: **15/15 estudiantes** ✅ (25 ago 2026)
 
-> **Repositorio base 2026:** [IES9018/proyecto-adi-2026](https://github.com/IES9018/proyecto-adi-2026) *(pendiente de creación)*
-
----
-
-## Lista de Estudiantes y Repositorios
-
-| Nombre del Estudiante | Usuario de GitHub | Enlace al Repositorio |
-| :--- | :--- | :--- |
-| Agustinagnz | `Agustinagnz` | [https://github.com/Agustinagnz/proyecto-adi-2026](https://github.com/Agustinagnz/proyecto-adi-2026) |
-| AlejandroPardo98 | `AlejandroPardo98` | [https://github.com/AlejandroPardo98/proyecto-adi-2026](https://github.com/AlejandroPardo98/proyecto-adi-2026) |
-| Anmonte | `Anmonte` | [https://github.com/Anmonte/proyecto-adi-2026](https://github.com/Anmonte/proyecto-adi-2026) |
-| ClaudioMPerez | `ClaudioMPerez` | [https://github.com/ClaudioMPerez/proyecto-adi-2026](https://github.com/ClaudioMPerez/proyecto-adi-2026) |
-| Damian-Coria | `Damian-Coria` | [https://github.com/Damian-Coria/proyecto-adi-2026](https://github.com/Damian-Coria/proyecto-adi-2026) |
-| Eze | `Ezem700` | [https://github.com/Ezem700/proyecto-adi-2026](https://github.com/Ezem700/proyecto-adi-2026) |
-| Jesica1487 | `Jesica1487` | [https://github.com/Jesica1487/proyecto-adi-2026](https://github.com/Jesica1487/proyecto-adi-2026) |
-| KrellLeonardo | `KrellLeonardo` | [https://github.com/KrellLeonardo/proyecto-adi-2026](https://github.com/KrellLeonardo/proyecto-adi-2026) |
-| Lautaro Lopez | `LL1121` | [https://github.com/LL1121/proyecto-adi-2026](https://github.com/LL1121/proyecto-adi-2026) |
-| VazAlexx | `VazAlexx` | [https://github.com/VazAlexx/proyecto-adi-2026](https://github.com/VazAlexx/proyecto-adi-2026) |
-| TinXho97 | `TinXho97` | [https://github.com/TinXho97/proyecto-adi-2026](https://github.com/TinXho97/proyecto-adi-2026) |
-| Sebas7168 | `Sebas7168` | [https://github.com/Sebas7168/proyecto-adi-2026](https://github.com/Sebas7168/proyecto-adi-2026) |
-| Santi385 | `Santi385` | [https://github.com/Santi385/proyecto-adi-2026](https://github.com/Santi385/proyecto-adi-2026) |
-| Milasch23 | `Milasch23` | [https://github.com/Milasch23/proyecto-adi-2026](https://github.com/Milasch23/proyecto-adi-2026) |
-| faustocartier-77 | `faustocartier-77` | [https://github.com/faustocartier-77/proyecto-adi-2026](https://github.com/faustocartier-77/proyecto-adi-2026) |
+| # | Estudiante | Usuario GitHub | Repo individual esperado | Estado | Observaciones |
+|---|---|---|---|---|---|
+| 1 | Agustina G. | `Agustinagnz` | `agustinagnz-proyecto-ganadero` | 🔶 **migración-pendiente** | Proyecto arrancó en cuenta personal; issue de migración: [#29](https://github.com/Agustinagnz/ADI-Proyecto-ganadero/issues/29) |
+| 2 | Alejandro P. | `AlejandroPardo98` | `alejandropardo98-<proyecto>` | ⬜ no-creado | — |
+| 3 | Anahí M. | `Anmonte` | `anmonte-<proyecto>` | ⬜ no-creado | — |
+| 4 | Claudio M. Pérez | `ClaudioMPerez` | `claudiomperez-<proyecto>` | ⬜ no-creado | — |
+| 5 | Damián Coria | `Damian-Coria` | `damian-coria-<proyecto>` | ⬜ no-creado | — |
+| 6 | Eze | `Ezem700` | `ezem700-<proyecto>` | ⬜ no-creado | — |
+| 7 | Jésica | `Jesica1487` | `jesica1487-<proyecto>` | ⬜ no-creado | — |
+| 8 | Leonardo Krell | `KrellLeonardo` | `krellleonardo-<proyecto>` | ⬜ no-creado | — |
+| 9 | Lautaro López | `LL1121` | `ll1121-<proyecto>` | ⬜ no-creado | — |
+| 10 | Alex Vázquez | `VazAlexx` | `vazalexx-<proyecto>` | ⬜ no-creado | — |
+| 11 | TinXho | `TinXho97` | `tinxho97-<proyecto>` | ⬜ no-creado | — |
+| 12 | Sebastián | `Sebas7168` | `sebas7168-<proyecto>` | ⬜ no-creado | — |
+| 13 | Santiago | `Santi385` | `santi385-<proyecto>` | ⬜ no-creado | — |
+| 14 | Milasch | `Milasch23` | `milasch23-<proyecto>` | ⬜ no-creado | — |
+| 15 | Fausto Cartier | `faustocartier-77` | `faustocartier77-<proyecto>` | ⬜ no-creado | Repo viejo `Fausto-Cartier---Automatizaci-n-de-Excel` NO cuenta: migrar a nomenclatura nueva |
 
 ---
 
-## 📝 Notas
+## Estados posibles
 
-- Los enlaces asumen el nombre de repo `proyecto-adi-2026`. Actualizar si el nombre final es distinto.
-- Agregar o quitar estudiantes según la lista oficial del inicio de ciclo 2026.
-- Los estudiantes deben hacer el fork del repo base cuando esté publicado en IES9018.
+| Estado | Significado |
+|---|---|
+| ⬜ `no-creado` | Aún no existe el repo individual en la org |
+| 🔶 `migración-pendiente` | Tiene trabajo en cuenta personal bajo reglas viejas; debe migrar a la org |
+| ✅ `activo` | Repo creado con nomenclatura correcta y TP1 en curso |
+
+## 🔄 Cómo se actualiza esta lista
+
+El docente audita semanalmente los repos de la org y actualiza estado + observaciones. Los alumnos **no editan** este archivo: cualquier corrección de datos se pide por Issue en el repo de cátedra.
+
+> Checklist del sprint: [CHECKLIST Sprint 1](../sprints/sprint-1/CHECKLIST.md) · Consigna vigente: [TP1](../trabajos-practicos/tp1-sdd-y-arneses/README.md)

@@ -3,158 +3,27 @@
   "anio": 2026,
   "profesor": "Paulo Alvarez",
   "institucion": "IES 9-018",
+  "modelo": "repos-individuales-org",
+  "nomenclatura": "<nombre_alumno>-<nombre_proyecto>",
+  "forks": "prohibidos",
   "repositorio_base": "https://github.com/IES9018/proyecto-adi-2026",
-  "ultima_actualizacion": "2026-04-13",
+  "cronograma": "./Planificaciones/CRONOGRAMA-TPs-2026.md",
+  "ultima_actualizacion": "2026-08-25",
   "estudiantes": [
-    {
-      "nombre": "Agustinagnz",
-      "github": "Agustinagnz",
-      "repo_fork": "https://github.com/Agustinagnz/proyecto-adi-2026",
-      "estado": "pendiente",
-      "prs_enviados": 0,
-      "issues_abiertos": 0,
-      "nota_final": null,
-      "observaciones": ""
-    },
-    {
-      "nombre": "AlejandroPardo98",
-      "github": "AlejandroPardo98",
-      "repo_fork": "https://github.com/AlejandroPardo98/proyecto-adi-2026",
-      "estado": "pendiente",
-      "prs_enviados": 0,
-      "issues_abiertos": 0,
-      "nota_final": null,
-      "observaciones": ""
-    },
-    {
-      "nombre": "Anmonte",
-      "github": "Anmonte",
-      "repo_fork": "https://github.com/Anmonte/proyecto-adi-2026",
-      "estado": "pendiente",
-      "prs_enviados": 0,
-      "issues_abiertos": 0,
-      "nota_final": null,
-      "observaciones": ""
-    },
-    {
-      "nombre": "ClaudioMPerez",
-      "github": "ClaudioMPerez",
-      "repo_fork": "https://github.com/ClaudioMPerez/proyecto-adi-2026",
-      "estado": "pendiente",
-      "prs_enviados": 0,
-      "issues_abiertos": 0,
-      "nota_final": null,
-      "observaciones": ""
-    },
-    {
-      "nombre": "Damian-Coria",
-      "github": "Damian-Coria",
-      "repo_fork": "https://github.com/Damian-Coria/proyecto-adi-2026",
-      "estado": "pendiente",
-      "prs_enviados": 0,
-      "issues_abiertos": 0,
-      "nota_final": null,
-      "observaciones": ""
-    },
-    {
-      "nombre": "Eze",
-      "github": "Ezem700",
-      "repo_fork": "https://github.com/Ezem700/proyecto-adi-2026",
-      "estado": "pendiente",
-      "prs_enviados": 0,
-      "issues_abiertos": 0,
-      "nota_final": null,
-      "observaciones": ""
-    },
-    {
-      "nombre": "Jesica1487",
-      "github": "Jesica1487",
-      "repo_fork": "https://github.com/Jesica1487/proyecto-adi-2026",
-      "estado": "pendiente",
-      "prs_enviados": 0,
-      "issues_abiertos": 0,
-      "nota_final": null,
-      "observaciones": ""
-    },
-    {
-      "nombre": "KrellLeonardo",
-      "github": "KrellLeonardo",
-      "repo_fork": "https://github.com/KrellLeonardo/proyecto-adi-2026",
-      "estado": "pendiente",
-      "prs_enviados": 0,
-      "issues_abiertos": 0,
-      "nota_final": null,
-      "observaciones": ""
-    },
-    {
-      "nombre": "Lautaro Lopez",
-      "github": "LL1121",
-      "repo_fork": "https://github.com/LL1121/proyecto-adi-2026",
-      "estado": "pendiente",
-      "prs_enviados": 0,
-      "issues_abiertos": 0,
-      "nota_final": null,
-      "observaciones": ""
-    },
-    {
-      "nombre": "VazAlexx",
-      "github": "VazAlexx",
-      "repo_fork": "https://github.com/VazAlexx/proyecto-adi-2026",
-      "estado": "pendiente",
-      "prs_enviados": 0,
-      "issues_abiertos": 0,
-      "nota_final": null,
-      "observaciones": ""
-    },
-    {
-      "nombre": "TinXho97",
-      "github": "TinXho97",
-      "repo_fork": "https://github.com/TinXho97/proyecto-adi-2026",
-      "estado": "pendiente",
-      "prs_enviados": 0,
-      "issues_abiertos": 0,
-      "nota_final": null,
-      "observaciones": ""
-    },
-    {
-      "nombre": "Sebas7168",
-      "github": "Sebas7168",
-      "repo_fork": "https://github.com/Sebas7168/proyecto-adi-2026",
-      "estado": "pendiente",
-      "prs_enviados": 0,
-      "issues_abiertos": 0,
-      "nota_final": null,
-      "observaciones": ""
-    },
-    {
-      "nombre": "Santi385",
-      "github": "Santi385",
-      "repo_fork": "https://github.com/Santi385/proyecto-adi-2026",
-      "estado": "pendiente",
-      "prs_enviados": 0,
-      "issues_abiertos": 0,
-      "nota_final": null,
-      "observaciones": ""
-    },
-    {
-      "nombre": "Milasch23",
-      "github": "Milasch23",
-      "repo_fork": "https://github.com/Milasch23/proyecto-adi-2026",
-      "estado": "pendiente",
-      "prs_enviados": 0,
-      "issues_abiertos": 0,
-      "nota_final": null,
-      "observaciones": ""
-    },
-    {
-      "nombre": "faustocartier-77",
-      "github": "faustocartier-77",
-      "repo_fork": "https://github.com/faustocartier-77/proyecto-adi-2026",
-      "estado": "pendiente",
-      "prs_enviados": 0,
-      "issues_abiertos": 0,
-      "nota_final": null,
-      "observaciones": ""
-    }
+    {"github": "Agustinagnz",     "repo_individual_esperado": "agustinagnz-proyecto-ganadero",  "estado_repo": "migracion-pendiente", "tp_actual": null, "observaciones": "Proyecto iniciado en cuenta personal (ADI-Proyecto-ganadero). Issue migracion: https://github.com/Agustinagnz/ADI-Proyecto-ganadero/issues/29"},
+    {"github": "AlejandroPardo98","repo_individual_esperado": "alejandropardo98-<proyecto>",    "estado_repo": "no-creado",           "tp_actual": null, "observaciones": ""},
+    {"github": "Anmonte",         "repo_individual_esperado": "anmonte-<proyecto>",             "estado_repo": "no-creado",           "tp_actual": null, "observaciones": ""},
+    {"github": "ClaudioMPerez",   "repo_individual_esperado": "claudiomperez-<proyecto>",       "estado_repo": "no-creado",           "tp_actual": null, "observaciones": ""},
+    {"github": "Damian-Coria",    "repo_individual_esperado": "damian-coria-<proyecto>",        "estado_repo": "no-creado",           "tp_actual": null, "observaciones": ""},
+    {"github": "Ezem700",         "repo_individual_esperado": "ezem700-<proyecto>",             "estado_repo": "no-creado",           "tp_actual": null, "observaciones": ""},
+    {"github": "Jesica1487",      "repo_individual_esperado": "jesica1487-<proyecto>",          "estado_repo": "no-creado",           "tp_actual": null, "observaciones": ""},
+    {"github": "KrellLeonardo",   "repo_individual_esperado": "krellleonardo-<proyecto>",       "estado_repo": "no-creado",           "tp_actual": null, "observaciones": ""},
+    {"github": "LL1121",          "repo_individual_esperado": "ll1121-<proyecto>",              "estado_repo": "no-creado",           "tp_actual": null, "observaciones": ""},
+    {"github": "VazAlexx",        "repo_individual_esperado": "vazalexx-<proyecto>",            "estado_repo": "no-creado",           "tp_actual": null, "observaciones": ""},
+    {"github": "TinXho97",        "repo_individual_esperado": "tinxho97-<proyecto>",            "estado_repo": "no-creado",           "tp_actual": null, "observaciones": ""},
+    {"github": "Sebas7168",       "repo_individual_esperado": "sebas7168-<proyecto>",           "estado_repo": "no-creado",           "tp_actual": null, "observaciones": ""},
+    {"github": "Santi385",        "repo_individual_esperado": "santi385-<proyecto>",            "estado_repo": "no-creado",           "tp_actual": null, "observaciones": ""},
+    {"github": "Milasch23",       "repo_individual_esperado": "milasch23-<proyecto>",           "estado_repo": "no-creado",           "tp_actual": null, "observaciones": ""},
+    {"github": "faustocartier-77","repo_individual_esperado": "faustocartier77-<proyecto>",     "estado_repo": "no-creado",           "tp_actual": null, "observaciones": "Repo viejo Fausto-Cartier---Automatizaci-n-de-Excel no sigue nomenclatura; migrar"}
   ]
 }
