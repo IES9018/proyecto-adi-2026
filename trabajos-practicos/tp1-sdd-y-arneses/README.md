@@ -1,6 +1,8 @@
 # TP N┬░ 1: Transici├│n de Vibe Coding a Spec-Driven Development (SDD)
 
 > ­ƒôà **Vigente desde el inicio del cursado** ┬À ­ƒºá Teor├¡a necesaria: [Unidad 1](https://github.com/IES9018/ADI-teoria-y-recursos/tree/main/unidad-1-procesos-y-metodologias)
+>
+> 🧭 **¿Llegaste directo acá?** Esta consigna vive en `proyecto-adi-2026`. Si te perdés, volvé siempre al [README principal](https://github.com/IES9018/proyecto-adi-2026#readme) — ahí están la ruta completa y el TP vigente. Contexto: [Teoría Unidad 1](https://github.com/IES9018/ADI-teoria-y-recursos/tree/main/unidad-1-procesos-y-metodologias) · [Coordinación PP3](https://github.com/IES9018/proyecto-pp3-2026)
 
 ---
 
