@@ -14,7 +14,7 @@ Tecnicatura Superior en Desarrollo de Software · 3° Año · Prof. Paulo Alvare
 | 1 | Instalá las herramientas del entorno | [instalacion-herramientas-cli.md](./instalacion-herramientas-cli.md) |
 | 2 | Leé el **TP vigente** (hoy: TP 1 · entrega mar 15 sep) | [trabajos-practicos/tp1-sdd-y-arneses/](./trabajos-practicos/tp1-sdd-y-arneses/) |
 | 3 | Creá **tu repositorio individual** en la org `IES9018` | nomenclatura `<nombre_alumno>-<nombre_proyecto>` (ej. `analia-crm`) — **sin forks** |
-| 4 | Copiá a tu repo las plantillas + arnés | [templates/](./templates/) · `.opencoderules` (este repo) |
+| 4 | Copiá a tu repo las plantillas + arnés | [templates/](./templates/) · `.opencoderules` (este repo) · [otros entornos](entornos-de-desarrollo.md) |
 | 5 | Escribí tu `SPEC.md` con la plantilla | [SPEC-template.md](./templates/SPEC-template.md) |
 
 ---
@@ -102,6 +102,7 @@ Marco completo: [Programa oficial](./Planificaciones/Programa-Arquitectura-y-Dis
 | Pregunta | Respuesta corta |
 |---|---|
 | ¿Hago fork de este repo? | **NO.** Creás tu propio repo en `IES9018`. |
+| ¿Uso VS Code/Cursor en vez de OpenCode? | Sí. El entorno es libre: mismo control (SPEC, ADRs, arnés nativo, PRs). Ver [entornos de desarrollo](entornos-de-desarrollo.md). |
 | ¿Puedo usar IA? | Sí, con arnés configurado y revisión crítica tuya documentada. |
 | ¿Dónde veo cómo se ve un proyecto completo? | [Proyecto modelo A-gobernanza-digital](./03-proyectos/A-gobernanza-digital/README.md). |
 | ¿Qué hago si me traba algo técnico? | Issue en este repo + consulta en clase. |

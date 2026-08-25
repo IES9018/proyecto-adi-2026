@@ -44,6 +44,8 @@ Creá en la raíz tu primer arnés limitando el comportamiento del agente local 
 * Estándares técnicos obligatorios (ej.: tipado estricto, sintaxis ECMAScript 2024).
 * Prácticas prohibidas (ej.: tipo `any`, dependencias no aprobadas).
 
+Usás otro agente (VS Code+Copilot, Cursor, Windsurf...)? El arnés se adapta al nativo de tu herramienta: [entornos de desarrollo](../../entornos-de-desarrollo.md).
+
 Opcional complementario: `INSTRUCTIONS.md` con instrucciones extendidas del agente.
 
 ---
