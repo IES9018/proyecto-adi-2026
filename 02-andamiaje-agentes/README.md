@@ -1,3 +1,5 @@
+> ⚠️ **MATERIAL LEGADO (pre-SDD).** Estos prompts son de una práctica anterior y quedaron desactualizados frente a la metodología vigente 2026 (SPEC primero, ADRs, arnés, flujo rama+PR). No los uses para las consignas actuales: seguí [TP1](../trabajos-practicos/tp1-sdd-y-arneses/README.md) y [entornos de desarrollo](../entornos-de-desarrollo.md). Se conservan solo como referencia histórica.
+
 ### 🏫 **Institución:** IES 9-018 "Gobernador Celso Jaque"
 ### 📚 **Carrera:** Tecnicatura Superior en Desarrollo de Software
 ### 📖 **Materia:** Arquitectura y Diseño de Interfaces
