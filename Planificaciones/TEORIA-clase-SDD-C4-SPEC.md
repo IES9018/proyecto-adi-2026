@@ -28,7 +28,7 @@
 | **Endpoint** | end-point | Cada puerta concreta: una URL que responde algo específico |
 | **OpenAPI** | oupen-api | Formato estándar para escribir los endpoints por contrato, antes de codear |
 | **JSON** | yeyson | Formato de texto simple para intercambiar datos entre programas |
-| **SQL / ORM** | secuel / orem | SQL: lenguaje de las bases de datos. ORM: traductor entre objetos del código y las tablas |
+| **SQL / ORM** | secuel / orem | SQL: lenguaje de las bases de datos. ORM: traductor entre objetos del código y las tablas || **RF** (Requerimiento Funcional) | erre-effe | Una función concreta que el sistema debe hacer; se numera (RF-01, RF-02...) para probarla y rastrearla || **Kanban** | kan-ban | Tablero visual con columnas Por hacer → En progreso → Hecho; las tareas son tarjetas que se mueven || **Commit** | comit | Guardar una foto del proyecto con mensaje: la unidad mínima del historial || **Issue** | ishu | Tarjeta de discusión en GitHub: duda, bug o tarea || **MVP** (Minimum Viable Product) | eme-uve-pe | Producto mínimo viable: lo más chico que ya sirve y se puede mostrar |
 
 
 ---
@@ -89,7 +89,7 @@ flowchart LR
 | Sección | Qué contiene | Error típico sin ella |
 |---|---|---|
 | **1. Contexto y propósito** | Problema real, usuarios, alcance general | Sistema sin norte que "hace de todo" |
-| **2. Requerimientos funcionales** | `RF-01`, `RF-02`… numerados y verificables | Features difusos imposibles de testear |
+| **2. Requerimientos Funcionales (RF)** | `RF-01`, `RF-02`… numerados y verificables | Features difusos imposibles de testear |
 | **3. Non-Goals** ⭐ | Lo que **NO** vas a construir (y por qué) | Scope (alcance) infinito: la IA agrega features fantasma |
 | **4. Contratos de datos** | Entidades principales, campos, relaciones | Modelos inconsistentes entre módulos |
 | **Changelog** (registro de cambios) | `v1 → v2`: fecha, qué cambió, motivo | Nadie sabe qué versión está leyendo |

@@ -27,7 +27,7 @@ Al terminar este TP tenés tu proyecto de PP2 **migrado a un repositorio propio 
 ### 1. Especificación declarativa — `SPEC.md`
 Completá la plantilla para tu proyecto integrador:
 * Contexto y propósito.
-* Requerimientos funcionales (RF-01…).
+* Requerimientos Funcionales o **RF**: cada función concreta del sistema vista desde afuera (el sistema permite...), numerada (RF-01, RF-02...) para poder probarla y rastrearla.
 * **Non-Goals:** qué NO vas a construir en esta etapa.
 * Contratos de datos principales.
 

@@ -4,6 +4,8 @@
 Breve explicación del problema a resolver y el objetivo general.
 
 ## 2. Requerimientos Funcionales
+
+> 💡 **Qué es un RF?** Requerimiento Funcional = una función CONCRETA que el sistema debe hacer, descrita desde afuera (qué hace, no cómo). Se numera (RF-01, RF-02...) para poder probarla y rastrearla: cada prueba y cada PR apuntan a un RF. Regla práctica: si no podés escribirlo como "El sistema permite X", todavía no es un RF.
 - [ ] **RF-01:** ...
 - [ ] **RF-02:** ...
 
