@@ -40,3 +40,5 @@ pgdata/
 
 # Certbot
 certbot/
+AGENTS.md
+opencode.json
