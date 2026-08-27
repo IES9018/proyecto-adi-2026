@@ -55,3 +55,5 @@ Sin estos seis puntos no se presenta el integrador — son la misma definición 
 
 **¿Se recupera?** Habrá un único recuperatorio en la mesa de diciembre para quienes no alcancen condiciones de admisión por fuerza mayor documentada.
 **¿En parejas?** El proyecto es individual desde PP2; los roles de la defensa también.
+
+> 📖 Un termino en ingles no te cierra? [Glosario del curso](../glosario.md)

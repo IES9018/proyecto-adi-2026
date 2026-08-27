@@ -12,7 +12,7 @@ Al terminar este TP tenés tu proyecto de PP2 **migrado a un repositorio propio 
 
 ---
 
-## 0´©Å⃣ Paso 0 — Creá tu repositorio de trabajo
+## Paso 0 - Crea tu repositorio de trabajo
 
 1. En GitHub, dentro de la organización [`IES9018`](https://github.com/IES9018), creá un repositorio **público** llamado `<nombre_alumno>-<nombre_proyecto>` (ej.: `analia-crm`, `raul-turnos`).
 2. **NO hagas fork** de este repo: creás uno nuevo y vacío (con README inicial opcional).
@@ -79,3 +79,5 @@ git push -u origin feature/tp1-sdd
 - [ ] `.opencoderules` presente y con reglas propias (no vacío)
 - [ ] Commits convencionales (`feat:` / `docs:`)
 - [ ] PR abierto hacia `main` de TU repo con descripción completa
+
+> 📖 Un termino en ingles no te cierra? [Glosario del curso](../glosario.md)

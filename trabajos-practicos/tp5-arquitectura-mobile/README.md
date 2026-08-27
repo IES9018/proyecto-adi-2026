@@ -19,7 +19,7 @@ Tu estrategia mobile está decidida y fundamentada, tus requisitos no funcionale
 ## ✅ Entregables
 
 ### 1. ADR-006 — Estrategia mobile · `docs/adr/ADR-006-estrategia-mobile.md`
-Responsive web vs. PWA vs. nativa vs. híbrida (Flutter/RN/Capacitor):
+Responsive web vs. PWA (app web instalable y offline) vs. nativa vs. híbrida (Flutter/React Native/Capacitor):
 * **Matriz de decisión explícita**: filas = criterios (costo de mantenimiento 1 persona, offline necesario?, acceso a hardware?, tiempo hasta PP3 cierre), columnas = opciones, celdas justificadas.
 * Decisión + consecuencias (qué NO vas a poder hacer, escrito antes de sufrirlo).
 
@@ -28,12 +28,12 @@ Tabla de objetivos numéricos para las 2 pantallas críticas del TP3:
 
 | Métrica | Presupuesto | Cómo se mide |
 |---|---|---|
-| LCP móvil | < 2.5 s (4G) | Lighthouse CI |
-| INP | < 200 ms | Lighthouse CI |
+| LCP móvil (Largest Contentful Paint: tiempo de pintado del elemento mayor) | < 2.5 s (4G) | Lighthouse CI |
+| INP (Interaction to Next Paint: tiempo de respuesta a tu toque) | < 200 ms | Lighthouse CI |
 | Peso inicial JS | < 200 KB gzip | `source-map-explorer` |
 
 * Cada presupuesto incluye la **herramienta concreta** que lo verifica.
-* Al menos uno debe poder correrse en CI (preparando el terreno del TP6).
+* Al menos uno debe poder correrse en CI (Integración Continua; se arma en el TP6) preparando el terreno del TP6.
 
 ### 3. Offline-first o Non-Goal justificado — `docs/arquitectura/offline-sync.md`
 Según tu dominio:
@@ -42,7 +42,7 @@ Según tu dominio:
 
 ### 4. Wireframe adaptativo — `docs/diseno/wireframes/`
 Las 2 pantallas críticas del TP3 reinterpretadas en breakpoint móvil (< 400 px):
-* Comparación lado a lado (desktop vs. móvil) con nota de qué cambió y por qué (targets táctiles ≥48px según Material/web.dev — Apple HIG usa el equivalente 44pt —, jerarquía, contenido recortado).
+* Comparación lado a lado (desktop vs. móvil) con nota de qué cambió y por qué (targets táctiles ≥48px según Material/web.dev — Apple HIG (Human Interface Guidelines, guía de diseño de Apple) usa el equivalente 44pt —, jerarquía, contenido recortado).
 
 ### 5. SPEC v5
 * Sección **Requisitos No Funcionales** con los presupuestos como requisitos medibles (RNF-01…).
@@ -76,3 +76,5 @@ Los RNF medibles son los que el **Sprint 3** verifica al desplegar; llegar sin e
 ## ❓ FAQ
 
 **¿Tengo que escribir una app nativa?** No. Para la mayoría de sus proyectos, responsive/PWA bien ejecutada gana la matriz. El TP premia la decisión fundamentada, no la tecnología cara.
+
+> 📖 Un termino en ingles no te cierra? [Glosario del curso](../glosario.md)

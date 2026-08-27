@@ -79,3 +79,5 @@ Este pipeline es la base del área **Testing y calidad (20%)** y del despliegue 
 
 **¿Docker es obligatorio?** Si tu stack lo necesita para correr en otra máquina: sí, Dockerfile multi-stage. Si no aplica: Non-Goal justificado en el postmortem.
 **¿Puedo usar GitHub Actions de terceros?** Sí, pero cada action externa debe estar justificada en una línea del propio workflow.
+
+> 📖 Un termino en ingles no te cierra? [Glosario del curso](../glosario.md)

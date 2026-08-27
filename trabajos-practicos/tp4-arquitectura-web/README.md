@@ -21,15 +21,15 @@ Tu sistema tiene su **API definida en OpenAPI** antes de existir, una **decisió
 ### 1. Contrato OpenAPI — `docs/arquitectura/api-contracts.yaml`
 Especificación OpenAPI 3.x con los **5 endpoints críticos** de tu SPEC v3:
 * Path, método, parámetros, cuerpo request/response con schemas, códigos de error (400/401/404/500 mínimo).
-* Autenticación declarada (`securitySchemes`) aunque sea JWT básico.
-* Validación obligatoria: el archivo tiene que pasar un linter (ej.: `npx @redocly/cli lint`). Incluí el comando en el README de `docs/arquitectura/`.
+* Autenticación declarada (`securitySchemes`) aunque sea JWT básico (token firmado que identifica al usuario).
+* Validación obligatoria: el archivo tiene que pasar un linter (validador automático de reglas, ej.: `npx @redocly/cli lint`). Incluí el comando en el README de `docs/arquitectura/`.
 
 ### 2. ADR-005 — Estrategia web · `docs/adr/ADR-005-estrategia-web.md`
-SPA vs. SSR vs. MPA vs. solo-API+front-existente. Alternativas descartadas con criterios: SEO necesario?, complejidad de estado, hosting objetivo de PP3, tamaño del equipo.
+SPA (una sola página en el navegador) vs. SSR (render en servidor) vs. MPA (páginas tradicionales) vs. solo-API+front-existente. Alternativas descartadas con criterios: SEO necesario?, complejidad de estado, hosting objetivo de PP3, tamaño del equipo.
 
 ### 3. Modelo de amenazas lite — `docs/seguridad/threat-model-lite.md`
-Tabla STRIDE simplificada sobre tus 5 endpoints:
-* Mínimo **5 amenazas concretas** (inyección, auth rota, exposición de datos, IDOR, rate-limit ausente…).
+Tabla STRIDE (Spoofing, Tampering, Repudiation, Info disclosure, DoS, Elevation) simplificada sobre tus 5 endpoints:
+* Mínimo **5 amenazas concretas** (inyección, auth rota, exposición de datos, IDOR (acceso sin control a objetos por ID), rate-limit ausente…).
 * Columna mitigación **referenciando dónde se aplica** (endpoint, capa, o regla de arnés).
 
 ### 4. Arnés v3 — reglas de seguridad operativas
@@ -74,4 +74,6 @@ El **Sprint 2** implementa y testea contra estos contratos; el threat model alim
 ## ❓ FAQ
 
 **¿Puedo cambiar un endpoint después?** Sí: primero cambiás el contrato (PR), después la implementación. El contrato es la fuente; nunca al revés.
-**¿GraphQL en vez de REST?** Posible, pero entonces tu "contrato" es el schema SDL con la misma exigencia de lint. Documentalo en ADR-005.
+**¿GraphQL (API por schema) en vez de REST (API sobre HTTP)?** Posible, pero entonces tu "contrato" es el schema SDL (Schema Definition Language, el lenguaje del schema de GraphQL) con la misma exigencia de lint. Documentalo en ADR-005.
+
+> 📖 Un termino en ingles no te cierra? [Glosario del curso](../glosario.md)

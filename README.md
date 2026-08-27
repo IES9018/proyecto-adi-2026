@@ -52,7 +52,7 @@ Teoría necesaria: [Unidad 1](https://github.com/IES9018/ADI-teoria-y-recursos/t
 
 ---
 
-## ­ƒÅù´©Å Estructura obligatoria de TU repositorio individual
+## Estructura obligatoria de TU repositorio individual
 
 Usá como referencia el andamiaje completo del proyecto modelo:
 
@@ -106,3 +106,5 @@ Marco completo: [Programa oficial](./Planificaciones/Programa-Arquitectura-y-Dis
 | ¿Puedo usar IA? | Sí, con arnés configurado y revisión crítica tuya documentada. |
 | ¿Dónde veo cómo se ve un proyecto completo? | [Proyecto modelo A-gobernanza-digital](./03-proyectos/A-gobernanza-digital/README.md). |
 | ¿Qué hago si me traba algo técnico? | Issue en este repo + consulta en clase. |
+
+> 📖 Un termino en ingles no te cierra? [Glosario del curso](../glosario.md)

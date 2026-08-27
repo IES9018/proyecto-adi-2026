@@ -1,27 +1,40 @@
-# Glosario Técnico Pedagógico — ADI 2026
+# Glosario del curso (inglés → castellano)
 
-1. **Desarrollo Dirigido por Especificaciones (Spec-Driven Development / SDD):** Metodología que exige escribir las reglas y requerimientos en texto plano previo a escribir código. *Analogía:* Elaborar los planos detallados de una casa antes de comprar los materiales o llamar a los albañiles.
-2. **Programación por Vibras (Vibe Coding):** Práctica de pedirle código a la IA mediante frases vagas e iterar sin entender las causas de los errores. *Analogía:* Pedirle a un mozo en un restaurante "traeme algo rico" y quejarte si la comida no te gusta.
-3. **Arnés de Contexto (Context Harnessing / Harnessing):** Archivos de configuración que encierran y restringen la libertad generativa de un LLM. *Analogía:* Los barandales de un puente o el corralito de un bebé que evitan caídas al vacío.
-4. **Reglas de OpenCode (OpenCode Rules):** Archivo inmutable (.opencoderules) en la raíz del repo que impone estándares técnicos a la IA. *Analogía:* El reglamento interno de convivencia y seguridad de una fábrica.
-5. **Registro de Decisión Arquitectónica (Architectural Decision Record / ADR):** Documento corto en Markdown que captura una elección técnica relevante y sus motivos. *Analogía:* El acta firmada por un escribano que explica por qué se eligió un terreno y se descartaron otros.
-6. **Plantilla de Arquitectura arc42 (arc42 Framework):** Estándar de 12 secciones para documentar la estructura de un software de punta a punta. *Analogía:* El manual de usuario e ingeniería completo de un automóvil de carreras.
-7. **Modelo C4 (C4 Model):** Técnica de diagramación en 4 niveles de zoom (Contexto, Contenedores, Componentes y Código). *Analogía:* Google Maps, que permite ver el mapa desde el planeta completo (Contexto) hasta la fachada de tu casa (Código).
-8. **Generación de Diagramas como Código (Diagrams as Code / Mermaid - PlantUML):** Escritura de diagramas en texto ejecutable versionable en Git. *Analogía:* En lugar de dibujar un plano con lápiz, escribir la receta geométrica exacta para que una máquina lo dibuje por vos.
-9. **Prompt Determinista (Deterministic Prompt):** Instrucción estructurada con formato rígido (ej. JSON) que elimina la ambigüedad. *Analogía:* Darle las coordenadas GPS exactas a un conductor en vez de decirle "andá para el sur".
-10. **Límites Explícitos de Alcance (Non-Goals):** Sección en una SPEC que aclara explícitamente qué cosas NO se van a desarrollar. *Analogía:* Poner un cartel en una obra en construcción que dice "Fase 1: Solo cimientos; No se construirán balcones todavía".
-11. **Gobernanza Digital (Digital Governance):** Conjunto de reglas institucionales para normar el uso de infraestructura y dominios. *Analogía:* La ordenanza municipal que regula qué tipo de comercios pueden abrir en cada barrio.
-12. **Memoria Persistente de Contexto (Persistent Memory):** Registro determinista del avance y las decisiones entre iteraciones de un proyecto. *Analogia:* La libreta de notas del profesor donde queda anotado en que pagina quedo cada alumno.
-13. **Contrato de Interfaz (API Contract):** Definición formal del formato de datos que intercambian el cliente y el servidor. *Analogía:* El enchufe y tomacorriente: ambos tienen que tener la misma forma y voltaje para que pase la corriente.
-14. **Arquitectura Limpia (Clean Architecture):** Organización del código en capas concéntricas aislando la lógica de negocio de los detalles técnicos. *Analogía:* Las capas de una cebolla o un vestuario térmico: la piel protegida al centro, las capas externas intercambiables.
-15. **Vistas de Arquitectura 4+1 (4+1 Architectural View Model):** Forma de describir un sistema desde 5 perspectivas diferentes (Lógica, Desarrollo, Procesos, Física y Casos de Uso). *Analogía:* Ver los planos eléctricos, de cañerías, de cimientos y de fachada de una misma casa.
-16. **Cómputo en el Cliente (Client-Side Rendering / CSR):** Renderizado de la interfaz gráfica ejecutado directamente en el navegador del usuario. *Analogía:* Comprar una pizza congelada y hornearla en tu casa en lugar de comerla en el restaurante.
-17. **Cómputo en el Servidor (Server-Side Rendering / SSR):** Renderizado donde la página HTML se arma completamente en el servidor antes de enviarla. *Analogía:* Pedir comida a domicilio lista para comer directamente en la mesa.
-18. **Diseño Técnico Visual (UI/UX System Design):** Conjunto de reglas de diseño, colores y componentes reutilizables. *Analogía:* El juego de piezas LEGO con reglas claras de cómo encaja cada bloque.
-19. **Interacción Humano-Computadora (Human-Computer Interaction / HCI):** Estudio de cómo las personas interactúan con las interfaces digitales. *Analogía:* El diseño del volante y pedales de un auto para que manejar sea intuitivo y seguro.
-20. **Pruebas de Componentes UI (UI Component Testing):** Verificación aislada de que los botones e insumos de la pantalla responden correctamente. *Analogía:* Probar cada tecla de un piano individualmente antes de tocar una sinfonía.
-21. **Patrón de Desconexión (Offline-First Architecture):** Diseño de aplicaciones mobile que funcionan sin internet y sincronizan datos al reconectarse. *Analogía:* Escribir cartas en un bloc de notas durante un viaje en avión y despacharlas en el buzón al aterrizar.
-22. **Evaluación de Código (Code Review / Auditoría):** Proceso de revisión técnica del código antes de integrarlo al proyecto principal. *Analogía:* La inspección técnica vehicular (RTO) antes de salir a la ruta.
-23. **Payload de Ejecución (Core CLI Payload):** Archivo JSON con la lista exacta de operaciones a realizar en el repositorio. *Analogía:* La lista del supermercado ordenada por pasillos para comprar sin perder tiempo.
-24. **Deuda Técnica Invisible (Invisible Technical Debt):** Defectos de diseño o parches de código no revisados que acumulan problemas a futuro. *Analogía:* Pintar sobre una humedad en la pared sin arreglar el caño roto que hay detrás.
-25. **Capataz de Obra (Docente / Technical Lead):** Rol del docente que audita, guía y aprueba planos (SPECs) en lugar de escribir el código por el alumno. *Analogía:* El inspector municipal que revisa que la obra respete las normas sin agarrar la cuchara de albañil.
+Términos que aparecen en los TPs en inglés o como siglas. Cada uno con una frase corta para no frenar la lectura.
+
+- **RF** = Requisito Funcional. Qué debe *hacer* el sistema ("el sistema permite…").
+- **RNF** = Requisito No Funcional. Restricción de calidad (rendimiento, seguridad, accesibilidad).
+- **SPEC** = Especificación. El documento `SPEC.md` que define qué vas a construir.
+- **ADR** = Architecture Decision Record (Registro de Decisión de Arquitectura). Por qué elegiste X sobre Y.
+- **Non-Goal** = Fuera de alcance. Lo que decidís explícitamente NO construir en esta etapa.
+- **Mermaid** = Lenguaje de diagramas en texto (Markdown) que GitHub dibuja solo.
+- **diff / diffable** = Diferenciable. Que se puede comparar versión a versión, igual que el código.
+- **OpenAPI** = Formato estándar para describir una API (sus endpoints, parámetros y respuestas).
+- **API** = Application Programming Interface. El contrato por el que dos programas se hablan.
+- **REST** = Estilo de API sobre HTTP (la más común; usa GET/POST/etc.).
+- **GraphQL** = Alternativa a REST: en vez de varios endpoints, usás un schema (SDL) con una sola consulta.
+- **SDL** = Schema Definition Language. El lenguaje en que se escribe el schema de GraphQL.
+- **JWT** = JSON Web Token. Token firmado que identifica y autentica a un usuario en una API.
+- **SPA** = Single Page Application. Web que corre toda del lado del navegador (ej. React).
+- **SSR** = Server Side Rendering. La página se genera en el servidor (mejor para SEO y primer render).
+- **MPA** = Multi Page Application. Web tradicional, una página por URL.
+- **PWA** = Progressive Web App. Sitio web que se comporta como app (instalable, funciona offline).
+- **CI** = Integración Continua. Pipeline que prueba tu código automáticamente en cada cambio.
+- **CD** = Entrega Continua. Automatiza el paso a producción después de la CI.
+- **STRIDE** = Modelo de amenazas: **S**poofing (suplantación), **T**ampering (manipulación), **R**epudiation (repudio), **I**nfo disclosure (divulgación), **D**oS (denegación), **E**levation (elevación de privilegios).
+- **IDOR** = Insecure Direct Object Reference. Falta de control de acceso a objetos por su ID (ej. `/usuario/5` sin permiso).
+- **linter / lint** = Herramienta que revisa reglas de estilo y errores en el código automáticamente.
+- **LCP** = Largest Contentful Paint. Métrica: tiempo en pintar el elemento más grande (< 2.5 s está bien).
+- **INP** = Interaction to Next Paint. Métrica: tiempo de respuesta a la interacción del usuario (< 200 ms está bien).
+- **HIG** = Human Interface Guidelines. Guía de diseño de Apple.
+- **WCAG** = Web Content Accessibility Guidelines. Norma de accesibilidad web. "AA" es un nivel de cumplimiento.
+- **Gherkin** = Formato de texto para criterios de aceptación (Given / When / Then).
+- **Nielsen** = Jakob Nielsen, autor de las 10 heurísticas de usabilidad.
+- **C4** = Context, Containers, Components, Code. Modelo de 4 niveles para diagramar arquitectura.
+- **Changelog** = Registro de cambios versionado (qué cambió y cuándo).
+- **supersede** = Reemplazar. Un ADR nuevo *supersede* a uno viejo (no se borra, se marca obsoleto).
+- **Postmortem** = Análisis de lo que salió mal para aprender (sin buscar culpables).
+- **PR** = Pull Request. Solicitud de cambio que se revisa antes de mergear.
+- **self-merge** = Vos misma mergeás tu propio PR (regla de la cátedra).
+- **arnés** = `.opencoderules` (o el equivalente de tu herramienta) que limita a tu agente de IA.
+- **Keep a Changelog** = Formato estándar de changelog (`[1.0.0] - fecha` con categorías).

@@ -76,5 +76,7 @@ Estos diagramas son exactamente los que pide el **Sprint 2** (`docs/arquitectura
 
 ## ❓ FAQ
 
-**¿Puedo usar imágenes en vez de Mermaid?** Podés, pero Mermaid es texto: versionable, diffable y auditable — igual que el código. Preferimos Mermaid.
+**¿Puedo usar imágenes en vez de Mermaid?** Podés, pero Mermaid es texto: versionable, diffable (comparable versión a versión, como el código) y auditable — igual que el código. Preferimos Mermaid.
 **¿Mi arquitectura va a cambiar después?** Seguro. Por eso existen los ADR: se agrega un ADR nuevo que supersede al anterior, nunca se borra historia.
+
+> 📖 Un termino en ingles no te cierra? [Glosario del curso](../glosario.md)

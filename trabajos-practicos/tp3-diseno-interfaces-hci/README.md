@@ -30,7 +30,7 @@ Las **2 pantallas críticas** identificadas arriba:
 > Baja fidelidad = cero colores bonitos. Acá se discute estructura y flujo, no paletas.
 
 ### 3. Auditoría heurística propia — `docs/diseno/auditoria-heuristica.md`
-Aplicá las **10 heurísticas de Nielsen** sobre tus 2 wireframes:
+Aplicá las **10 heurísticas de Nielsen** (las 10 reglas de usabilidad de Jakob Nielsen) sobre tus 2 wireframes:
 * Tabla: heurística | ¿cumple? | evidencia | corrección propuesta.
 * Mínimo **3 problemas reales detectados y corregidos** (un hallazgo sin corrección no cuenta).
 
@@ -38,7 +38,7 @@ Aplicá las **10 heurísticas de Nielsen** sobre tus 2 wireframes:
 Framework/librería de interfaz + design system si aplica. Alternativas descartadas con criterios: curva de aprendizaje solo, ecosistema, accesibilidad out-of-the-box, compatibilidad con tu ADR-002.
 
 ### 5. SPEC v3
-* Los RF de interfaz ahora tienen **criterios de aceptación estilo Given/When/Then**.
+* Los RF de interfaz ahora tienen **criterios de aceptación en formato Gherkin** (Given/When/Then: dado un contexto, cuando ocurre X, entonces pasa Y).
 * Un requisito nuevo obligatorio: **accesibilidad básica** (navegación por teclado + contraste AA) en las 2 pantallas críticas.
 * Changelog v2→v3 al pie.
 
@@ -62,7 +62,7 @@ PR → checklists → self-merge → auditoría docente posterior.
 - [ ] Wireframes: estructura clara, anotados con objetivo y error prevenido
 - [ ] Auditoría heurística: ≥3 hallazgos CON corrección aplicada al wireframe
 - [ ] ADR-004 con alternativas descartadas objetivas
-- [ ] SPEC v3 con Gherkin + requisito de accesibilidad + changelog
+- [ ] SPEC v3 con criterios Gherkin (Given/When/Then) + requisito de accesibilidad + changelog
 
 ## 🔗 Conexión con PP3
 
@@ -70,5 +70,7 @@ El núcleo funcional del **Sprint 2** implementa estas pantallas: sin este TP, e
 
 ## ❓ FAQ
 
-**¿Puedo usar Figma y pegar capturas?** Sí, pero el archivo `.fig` no vive en tu repo ni tiene diff. Lo mínimo versionable (texto Mermaid) va al repo; Figma es complemento.
-**¿WCAG completo?** No: alcance AA en navegación por teclado y contraste para tus 2 pantallas críticas. Non-Goal explícito todo lo demás.
+**¿Puedo usar Figma y pegar capturas?** Sí, pero el archivo `.fig` no vive en tu repo ni tiene diff (comparación de versiones). Lo mínimo versionable (texto Mermaid) va al repo; Figma es complemento.
+**¿WCAG completo?** No: alcance WCAG AA (nivel de conformidad de las Web Content Accessibility Guidelines) en navegación por teclado y contraste para tus 2 pantallas críticas. Non-Goal explícito todo lo demás.
+
+> 📖 Un termino en ingles no te cierra? [Glosario del curso](../glosario.md)
