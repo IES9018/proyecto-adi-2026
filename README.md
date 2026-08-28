@@ -111,9 +111,7 @@ Marco completo: [Programa oficial](./Planificaciones/Programa-Arquitectura-y-Dis
 
 ## Seguimiento del curso
 
-El avance de los 15 alumnos se audita solo, todos los dias, y queda publico aqui:
+El avance de los 15 alumnos se audita automaticamente todos los dias con un script determinista del docente (sin IA). Cada alumno recibe feedback por Issues en su propio repositorio. El registro de seguimiento es una herramienta interna del docente (no es publico).
 
-- Tabla viva: https://github.com/IES9018/seguimiento-alumnos (archivo PROGRESO.md)
-- Repo del tracker (script determinista + snapshots): https://github.com/IES9018/seguimiento-alumnos
-
-El bot corre a las 10:00 Argentina y anota una fila por dia. Los expedientes individuales estan en seguimiento-alumnos/*.json de ese repo.
+- El bot corre a las 10:00 Argentina y anota el avance diario.
+- Si tu repo figura como "sin repo" o con SPEC/ADR faltante, vas a recibir un Issue con los pasos a seguir.

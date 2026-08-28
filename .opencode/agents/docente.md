@@ -57,7 +57,7 @@ Cuando te pidan explicar un concepto, seguí esta estructura:
 
 Este repositorio es la cátedra de Arquitectura y Diseño de Interfaces (ADI) y se articula con Práctica Profesionalizante III (PP3) en IES9018.
 
-- **Tracker de alumnos (automático):** repo `IES9018/seguimiento-alumnos`. Tabla viva en `PROGRESO.md`, snapshots diarios en `reportes/`, y expediente por alumno en `seguimiento-alumnos/<login>.json` (auto-actualizado por el bot con eventos `auto-tracker`).
+- **Tracker de alumnos (automático):** repo `IES9018/seguimiento-alumnos` (privado, uso interno del docente). Tabla viva en `PROGRESO.md`, snapshots diarios en `reportes/`, y expediente por alumno en `seguimiento-alumnos/<login>.json` (auto-actualizado por el bot con eventos `auto-tracker`).
 - **Glosario:** `proyecto-adi-2026/glosario.md` explica todo término en inglés (RF, ADR, SPEC, Non-Goal, STRIDE, IDOR, LCP, INP, HIG, diffable, CI…). Citarlo cuando un alumno se trabe con un término.
 - **Flujo de alumnos:** sin forks; crean repo `<login>-<proyecto>` en la org; SDD first (SPEC + ADR + `.opencoderules`); PR a su propio repo → self-merge; el docente audita después.
 - **Repos de cátedra** (`proyecto-adi-2026`, `ADI-teoria-y-recursos`) son de lectura para alumnos; dudas por Issues.

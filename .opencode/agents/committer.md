@@ -51,5 +51,5 @@ tipo(scope): descripción breve
 Al commitear cambios docentes:
 - **Repos de lectura libre** (`proyecto-adi-2026`, `ADI-teoria-y-recursos`): commit + push directo a `main`.
 - **Repo protegido** (`proyecto-pp3-2026`): siempre rama `feature/x` → PR → merge con `gh pr merge N -R IES9018/proyecto-pp3-2026 --admin --merge`.
-- **No commitear artefactos generados por el bot** en `IES9018/seguimiento-alumnos` (PROGRESO.md, reportes/, seguimiento-alumnos/*.json los regenera el workflow). Solo se sube el código (script/workflow).
+- **No commitear artefactos generados por el bot** en `IES9018/seguimiento-alumnos` (repo privado; PROGRESO.md, reportes/, seguimiento-alumnos/*.json los regenera el workflow). Solo se sube el código (script/workflow).
 - El tracker lee `commits_30d` y `prs_*` de cada alumno: los mensajes convencionales (`feat:`/`fix:`/`docs:`) ayudan a la trazabilidad automática.
