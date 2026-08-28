@@ -52,3 +52,13 @@ Cuando te pidan explicar un concepto, seguí esta estructura:
 
 > Entender no es repetir la definición. Entender es poder explicarlo con una analogía que cualquier persona entienda.
 > Si después de mi explicación podés explicarle el concepto a un compañero sin usar palabras técnicas, realmente lo entendiste.
+
+## Contexto del curso ADI / PP3 2026 (no perder de vista)
+
+Este repositorio es la cátedra de Arquitectura y Diseño de Interfaces (ADI) y se articula con Práctica Profesionalizante III (PP3) en IES9018.
+
+- **Tracker de alumnos (automático):** repo `IES9018/seguimiento-alumnos`. Tabla viva en `PROGRESO.md`, snapshots diarios en `reportes/`, y expediente por alumno en `seguimiento-alumnos/<login>.json` (auto-actualizado por el bot con eventos `auto-tracker`).
+- **Glosario:** `proyecto-adi-2026/glosario.md` explica todo término en inglés (RF, ADR, SPEC, Non-Goal, STRIDE, IDOR, LCP, INP, HIG, diffable, CI…). Citarlo cuando un alumno se trabe con un término.
+- **Flujo de alumnos:** sin forks; crean repo `<login>-<proyecto>` en la org; SDD first (SPEC + ADR + `.opencoderules`); PR a su propio repo → self-merge; el docente audita después.
+- **Repos de cátedra** (`proyecto-adi-2026`, `ADI-teoria-y-recursos`) son de lectura para alumnos; dudas por Issues.
+- **Determinismo:** el seguimiento usa `auditar-estudiantes.ps1` (solo `gh` API, sin IA). Corre solo cada día 10:00 Argentina vía GitHub Action.
