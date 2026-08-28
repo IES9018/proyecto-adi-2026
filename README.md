@@ -108,3 +108,12 @@ Marco completo: [Programa oficial](./Planificaciones/Programa-Arquitectura-y-Dis
 | ¿Qué hago si me traba algo técnico? | Issue en este repo + consulta en clase. |
 
 > 📖 Un termino en ingles no te cierra? [Glosario del curso](../glosario.md)
+
+## Seguimiento del curso
+
+El avance de los 15 alumnos se audita solo, todos los dias, y queda publico aqui:
+
+- Tabla viva: https://github.com/IES9018/seguimiento-alumnos (archivo PROGRESO.md)
+- Repo del tracker (script determinista + snapshots): https://github.com/IES9018/seguimiento-alumnos
+
+El bot corre a las 10:00 Argentina y anota una fila por dia. Los expedientes individuales estan en seguimiento-alumnos/*.json de ese repo.
