@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  playwright:
+    image: mcr.microsoft.com/playwright:v1.52.0-noble
+    container_name: gobernanza-playwright
+    working_dir: /frontend
+    volumes:
+      - ./08_CODIGO_FUENTE/frontend:/frontend
+    environment:
+      - NODE_ENV=test
+    network_mode: "host"
+    entrypoint: ["bash", "-c", "npm install && npx playwright test"]
