@@ -13,7 +13,6 @@ from pathlib import Path
 _temp_db = Path(tempfile.gettempdir()) / "gobernanza_test_integracion.db"
 _temp_db_str = f"sqlite:///{_temp_db}"
 os.environ["DATABASE_URL"] = _temp_db_str
-os.environ["ENVIRONMENT"] = "testing"
 
 from sqlmodel import Session, SQLModel
 
@@ -23,14 +22,6 @@ from src.application.auth import hash_password
 from src.infrastructure.db import engine, UsuarioORM
 from fastapi.testclient import TestClient
 
-# ─── Deshabilitar rate limiting para tests ────────────────────────────────────
-# Remover middleware de SlowAPI y exception handler
-app.state.limiter = None
-for middleware in app.user_middleware[:]:
-    if 'slowapi' in str(middleware.cls).lower():
-        app.user_middleware.remove(middleware)
-# Remover exception handler de RateLimitExceeded
-app.exception_handlers.pop(429, None)
 
 # ─── Configuración de la base de datos de prueba ─────────────────────────────
 
