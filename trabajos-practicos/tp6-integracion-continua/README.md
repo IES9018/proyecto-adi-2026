@@ -75,6 +75,14 @@ PR → checklists (incluye CI verde) → self-merge → tag → auditoría docen
 
 Este pipeline es la base del área **Testing y calidad (20%)** y del despliegue del **Sprint 3**; el postmortem alimenta directamente tu `auditoria-sprint*.md`.
 
+## 🚀 Desafío avanzado (opcional)
+
+Si querés ir más allá del TP6 y aprender a contrastar tu implementación contra SPEC, ADR y casos de uso mediante E2E, consultá el **Apéndice Avanzado — Testing de Consistencia y Trazabilidad**:
+
+[trabajos-practicos/apendice-avanzado-testing-consistencia/](../apendice-avanzado-testing-consistencia/)
+
+> Este desafío es **opcional** y otorga un bonus de hasta +1 punto sobre la nota final del cierre integrador de PP3. No reemplaza ningún entregable obligatorio.
+
 ## ❓ FAQ
 
 **¿Docker es obligatorio?** Si tu stack lo necesita para correr en otra máquina: sí, Dockerfile multi-stage. Si no aplica: Non-Goal justificado en el postmortem.
