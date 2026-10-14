@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>adi-proyecto</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  /* ============================================================
+   COLECCIÓN CUADERNILLOS IES 9-018 · Sistema visual único
+   Print-first · fondos ≤ 12% gris · color con significado fijo
+   Fuente de verdad: cuadernillos-discovery/VISUAL_SYSTEM_PROPOSAL.md
+   ============================================================ */
+
+:root{
+  /* --- Barra lateral: ÚNICO grosor para todos los bloques --- */
+  --bar:3mm;
+  /* --- Paleta semántica (una definición por color) --- */
+  --tinta:#143b66;      /* azul de identidad: títulos, portada, th */
+  --azul:#1f5fa8;       /* concepto */
+  --verde:#1f8a70;      /* en simple / probalo */
+  --rojo:#b3402f;       /* error frecuente */
+  --ambar:#c77d0a;      /* ¿por qué importa? */
+  --ocre:#d9a400;       /* recordá */
+  --naranja:#d35400;    /* en el proyecto */
+  --violeta:#6b4fa0;    /* razonamiento: paso a paso y ¿qué pasaría si? */
+  --gris:#5a6470;       /* neutro */
+  --carbon:#3a424b;     /* código / checkpoint */
+  --texto:#0a0d12;
+  --chip:#e4e8ec;       /* código en línea */
+  --codigo-fondo:#f4f6f8;
+}
+*{box-sizing:border-box}
+
+/* ---------- Cuerpo ---------- */
+body{font:11pt/1.45 Georgia,'Times New Roman',serif;color:var(--texto);
+     margin:0 auto;padding:14mm 16mm 20mm 20mm;max-width:186mm}
+h1{font:700 21pt/1.15 'Segoe UI',Helvetica,sans-serif;color:var(--tinta);margin:0 0 4mm;page-break-after:avoid}
+h2{font:700 15pt/1.25 'Segoe UI',sans-serif;color:var(--tinta);margin:7mm 0 3mm;break-after:avoid}
+h3{font:700 11.5pt/1.3 'Segoe UI',sans-serif;color:#23303d;margin:4mm 0 2mm;break-after:avoid}
+p{margin:0 0 2.4mm;orphans:3;widows:3;text-align:justify}
+ul,ol{margin:0 0 2.6mm 5.5mm}li{margin-bottom:1.2mm}
+strong{color:#101317}
+
+/* ---------- Bloques pedagógicos ----------
+   MISMA barra (--bar), MISMO padding, MISMO radio, MISMA alineación.
+   Se distinguen por color de barra + ETIQUETA ::before (no solo color). */
+.concepto,.simple,.importa,.error,.recorda,.proyecto,.probalo,.si,.paso,.checkpoint{
+  border-left:var(--bar) solid var(--gris);padding:2.6mm 4mm 2.6mm 4mm;margin:3mm 0;
+  border-radius:0 2mm 2mm 0;page-break-inside:avoid}
+.concepto::before,.simple::before,.importa::before,.error::before,.recorda::before,
+.proyecto::before,.probalo::before,.si::before,.paso::before,.checkpoint::before{
+  display:block;font:700 7.5pt 'Segoe UI',sans-serif;letter-spacing:.12em;
+  text-transform:uppercase;margin:0 0 1.4mm}
+.concepto{background:#dce8f5;border-left-color:var(--azul)}
+.concepto::before{content:"Concepto clave";color:var(--azul)}
+.simple{background:#e1f0eb;border-left-color:var(--verde);border:1px dashed #a0c9b4;border-left-style:solid;border-left-width:var(--bar)}
+.simple::before{content:"En simple";color:var(--verde)}
+.importa{background:#f8edd4;border-left-color:var(--ambar)}
+.importa::before{content:"¿Por qué importa?";color:var(--ambar)}
+.error{background:#f8ded9;border-left-color:var(--rojo)}
+.error::before{content:"Error frecuente";color:var(--rojo)}
+.recorda{background:#faf2d4;border-left-color:var(--ocre)}
+.recorda::before{content:"Recordá";color:#8a6a00}
+.proyecto{background:#fae6d4;border-left-color:var(--naranja)}
+.proyecto::before{content:"En el proyecto";color:var(--naranja)}
+.probalo{background:#e1f0eb;border-left-color:var(--verde)}
+.probalo::before{content:"Probalo";color:var(--verde)}
+.si{background:#eee4f5;border-left-color:var(--violeta)}
+.si::before{content:"¿Qué pasaría si…?";color:var(--violeta)}
+.paso{background:#ebe1f2;border-left-color:var(--violeta)}
+.paso::before{content:"Paso a paso";color:var(--violeta)}
+.checkpoint{background:#e7eaee;border-left-color:var(--carbon);box-shadow:0 1mm 3mm rgba(0,0,0,.14)}
+.checkpoint::before{content:"Checkpoint — respondé sin mirar";color:var(--carbon)}
+
+/* ---------- Código: fondo claro, UNA barra, UN padding ----------
+   Reglas separadas para wrapper y pre interno (causa del bug corregida). */
+.sourceCode{background:var(--codigo-fondo);border:none;border-left:var(--bar) solid var(--carbon);
+  border-radius:0 2mm 2mm 0;padding:2.8mm 4mm;margin:3mm 0;page-break-inside:avoid;overflow-x:auto}
+.sourceCode pre{margin:0;padding:0;background:transparent;border:none;border-left:none;
+  border-radius:0;overflow:visible;white-space:pre-wrap;overflow-wrap:anywhere}
+/* TERMINAL (code.sourceCode): neutraliza la maquinaria de números de línea de pandoc
+   (span inline-block + text-indent de print para pre.numberSource) que fragmenta,
+   desplaza y recorta las líneas. Solo afecta a esta categoría. */
+.sourceCode code.sourceCode{white-space:pre-wrap;position:relative}
+.sourceCode code.sourceCode > span{display:block;line-height:inherit;text-indent:0;padding-left:0;position:relative;z-index:1}
+.sourceCode code.sourceCode > span > a:first-child{display:none}
+.sourceCode code.sourceCode > span > a:first-child::before{content:none;text-decoration:none}
+pre{background:var(--codigo-fondo);border:none;border-left:var(--bar) solid var(--carbon);
+  border-radius:0 2mm 2mm 0;padding:2.8mm 4mm;margin:3mm 0;page-break-inside:avoid;
+  font:9pt/1.5 Consolas,'Cascadia Mono',monospace;color:#1a1d21;white-space:pre-wrap;overflow-wrap:anywhere}
+code{background:var(--chip);color:#14171c;padding:0 1.5mm;border-radius:1.5mm;
+  font:8.8pt/1.35 Consolas,'Cascadia Mono',monospace;overflow-wrap:anywhere}
+/* REGLA DE RELACIÓN: dentro de un bloque preformateado, el <code> es transparente.
+   Una sola superficie — el estilo chip es SOLO para código en línea. */
+pre code{background:transparent;color:inherit;padding:0;border:0;border-radius:0;
+  box-shadow:none;font:inherit;line-height:inherit;overflow-wrap:inherit;display:inline}
+
+/* ---------- Tablas: cabecera clara + filete ---------- */
+table{width:100%;border-collapse:collapse;margin:3mm 0;font-size:9.8pt;page-break-inside:avoid}
+th{background:#e8eef5;color:var(--tinta);font:700 8.5pt 'Segoe UI',sans-serif;padding:2mm 2.5mm;
+   border-top:1.5mm solid var(--tinta);border-bottom:.8pt solid #b9c6d4;text-align:left}
+td{padding:2mm 2.5mm;border-bottom:.6pt solid #ccd3da;overflow-wrap:break-word}
+tr:nth-child(even) td{background:#f6f8fa}
+td code{font-size:8.3pt}
+
+/* ---------- Figuras / diagramas SVG ---------- */
+img{max-width:100%;height:auto;border:.6pt solid #d4dae0;border-radius:2mm;
+    background:#fbfcfd;padding:2mm;page-break-inside:avoid}
+p>em:only-child{display:block;text-align:center;color:var(--gris);font-size:9pt;margin:1mm 0 3mm}
+
+/* ---------- Citas ---------- */
+blockquote{background:#eaf1f9;border-left:var(--bar) solid var(--azul);padding:2.5mm 4mm;margin:3mm 0;
+  border-radius:0 2mm 2mm 0}
+
+/* ---------- Links ---------- */
+a{color:var(--tinta);text-decoration:underline;text-decoration-color:#9db3cc;text-underline-offset:1.5pt}
+
+/* ---------- Índice ---------- */
+nav#TOC{border:.6pt solid #ccd3da;border-radius:2mm;padding:5mm 7mm;margin:6mm 0 0;
+  background:#fbfcfd;page-break-after:always}
+nav#TOC h2{margin:0 0 3mm;font-size:13pt}
+nav#TOC ul{list-style:none;margin:0;padding:0}
+nav#TOC li{margin:0 0 1.8mm;font:10.5pt/1.4 'Segoe UI',sans-serif}
+nav#TOC>ul>li{font-weight:700}
+nav#TOC a{color:var(--tinta);text-decoration:none}
+
+/* ---------- Portada (colección) ---------- */
+.portada{background:var(--tinta);color:#fff;width:210mm;min-height:292mm;
+  padding:22mm 20mm;margin:6mm auto 0;border-radius:3mm;box-shadow:0 2px 10px rgba(0,0,0,.35);
+  display:flex;flex-direction:column;justify-content:space-between}
+.portada .kicker{font:700 9pt 'Segoe UI',sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#8fb6e0}
+.portada .num{font:700 76pt/1 'Segoe UI',sans-serif;margin:6mm 0 3mm}
+.portada h1{color:#fff;font-size:27pt;line-height:1.12;margin:0 0 5mm;page-break-after:auto}
+.portada .sub{font:400 12.5pt/1.45 'Segoe UI',sans-serif;color:#c9dcf1;max-width:150mm}
+.portada .meta{font:10pt/1.75 'Segoe UI',sans-serif;color:#c9dcf1}
+.portada .meta b{color:#fff}
+.portada .repo{font:9.5pt Consolas,monospace;color:#fff}
+.portada .barra{height:5mm;border-radius:1mm;margin-top:6mm;
+  background:linear-gradient(90deg,var(--naranja) 0 22%,var(--verde) 22% 44%,#4c8fd6 44% 66%,var(--ocre) 66% 84%,var(--rojo) 84% 100%)}
+
+/* ---------- Cierre de unidad ---------- */
+.cierre{page-break-inside:avoid}
+.cierre>p:last-child{color:var(--gris);font:italic 9.5pt 'Segoe UI',sans-serif;
+  border-top:.6pt solid #dde2e7;padding-top:2mm;margin:4mm 0 0}
+
+/* ---------- Saltos de página entre unidades ---------- */
+section.level1{page-break-before:always}
+section.level1:first-of-type{page-break-before:auto}
+
+/* ---------- Impresión A4 ---------- */
+@media print{
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;color-adjust:exact!important}
+  @page{size:A4;margin:18mm 16mm 18mm 20mm}   /* canal de encuadernación a la izquierda */
+  @page :first{margin:0}                       /* portada a sangre */
+  body{padding:0;max-width:none}
+  .portada{width:210mm;height:296.5mm;min-height:0;margin:0;border-radius:0;box-shadow:none;page-break-after:always}
+  nav#TOC{margin:0 0 6mm;border-radius:0;border:none;border-bottom:.6pt solid #ccd3da}
+}
+
+</style>
+</head>
+<body>
+<div class="portada">
+  <div>
+    <div class="kicker">Cuadernillos de Desarrollo de Software</div>
+    <div class="num">02</div>
+    <h1>Arquitectura y Diseño<br>de Interfaces<br>Proyecto</h1>
+    <div class="sub">De la teoría a la práctica: los 7 trabajos prácticos, el proyecto modelo, las plantillas y la cadena completa de trazabilidad para tu proyecto integrador.</div>
+    <div class="barra"></div>
+  </div>
+  <div class="meta">
+    <b>Arquitectura y Diseño de Interfaces</b> · 3° año · Ciclo 2026<br>
+    Tecnicatura Superior en Desarrollo de Software · IES 9-018 · Prof. Paulo Alvarez<br><br>
+    Fuente primaria: <span class="repo">github.com/IES9018/proyecto-adi-2026</span><br>
+    Se lee junto con: Cuadernillo 01 — Teoría · Cuadernillo 03 — PP3
+  </div>
+</div>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Índice</h2>
+<ul>
+<li><a href="#cómo-usar-este-cuadernillo"
+id="toc-cómo-usar-este-cuadernillo">Cómo usar este cuadernillo</a></li>
+<li><a href="#mapa-del-proyecto" id="toc-mapa-del-proyecto">Mapa del
+proyecto</a></li>
+<li><a href="#tp1-de-vibe-coding-a-sdd"
+id="toc-tp1-de-vibe-coding-a-sdd">TP1 — De Vibe Coding a SDD</a></li>
+<li><a href="#tp2-arquitectura-visible"
+id="toc-tp2-arquitectura-visible">TP2 — Arquitectura Visible</a></li>
+<li><a href="#tp3-interfaces-que-no-confunden"
+id="toc-tp3-interfaces-que-no-confunden">TP3 — Interfaces que no
+Confunden</a></li>
+<li><a href="#tp4-contratos-antes-que-código"
+id="toc-tp4-contratos-antes-que-código">TP4 — Contratos antes que
+Código</a></li>
+<li><a href="#tp5-estrategia-mobile" id="toc-tp5-estrategia-mobile">TP5
+— Estrategia Mobile</a></li>
+<li><a href="#tp6-integración-continua"
+id="toc-tp6-integración-continua">TP6 — Integración Continua</a></li>
+<li><a href="#tp-final-defensa" id="toc-tp-final-defensa">TP Final —
+Defensa</a></li>
+<li><a href="#proyecto-modelo-y-plantillas"
+id="toc-proyecto-modelo-y-plantillas">Proyecto Modelo y
+Plantillas</a></li>
+<li><a href="#cadena-de-trazabilidad-completa"
+id="toc-cadena-de-trazabilidad-completa">Cadena de trazabilidad
+completa</a></li>
+</ul>
+</nav>
+<section id="cómo-usar-este-cuadernillo" class="level1">
+<h1>Cómo usar este cuadernillo</h1>
+<blockquote>
+<p><strong>Propósito:</strong> que sepas qué producir en cada TP, con
+qué plantilla, cómo se conecta con los anteriores y con la teoría, y
+cómo cada artefacto alimenta el proyecto integrador.</p>
+</blockquote>
+<p>Fuentes de esta colección: <code>IES9018/ADI-teoria-y-recursos</code>
+(teoría), <code>IES9018/proyecto-adi-2026</code> (proyecto),
+<code>IES9018/proyecto-pp3-2026</code> (coordinación).</p>
+<section id="qué-hace-cada-cuadernillo" class="level2">
+<h2>Qué hace cada cuadernillo</h2>
+<table>
+<thead>
+<tr>
+<th>Cuadernillo</th>
+<th>Rol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>01 — Teoría</strong></td>
+<td>Comprendés los conceptos</td>
+</tr>
+<tr>
+<td><strong>02 — Proyecto (este)</strong></td>
+<td>Aplicás: producís artefactos en cada TP</td>
+</tr>
+<tr>
+<td><strong>03 — PP3</strong></td>
+<td>Coordinás sprints, auditoría y defensa</td>
+</tr>
+</tbody>
+</table>
+<div class="recorda">
+<p><strong>Este cuadernillo no reemplaza las consignas.</strong> Cada TP
+tiene su README completo en el repositorio
+<code>proyecto-adi-2026</code>. Acá encontrás el mapa de navegación: qué
+se espera, cómo se conecta y qué artefacto dejar listo para el siguiente
+paso.</p>
+</div>
+</section>
+<section id="cómo-leer-cada-unidad" class="level2">
+<h2>Cómo leer cada unidad</h2>
+<p>Cada TP sigue esta estructura:</p>
+<table>
+<thead>
+<tr>
+<th>Sección</th>
+<th>Te dice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Qué producís</strong></td>
+<td>Artefacto concreto que deja el TP</td>
+</tr>
+<tr>
+<td><strong>Entrada</strong></td>
+<td>Qué necesitás tener antes de empezar</td>
+</tr>
+<tr>
+<td><strong>Teoría</strong></td>
+<td>Qué unidad del Cuadernillo 01 aplicar</td>
+</tr>
+<tr>
+<td><strong>Plantilla</strong></td>
+<td>Archivo del que partir</td>
+</tr>
+<tr>
+<td><strong>Siguiente</strong></td>
+<td>Qué consume este resultado</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="archivos-canónicos" class="level2">
+<h2>Archivos canónicos</h2>
+<p>Todos los TPs producen archivos dentro de tu repositorio
+individual:</p>
+<pre><code>tu-repo/
+├── SPEC.md              ← evoluciona v1 → vFinal
+├── .opencoderules        ← arnés v1 → vFinal
+├── docs/
+│   ├── adr/ADR-001..00X  ← decisiones acumulativas
+│   ├── arquitectura/     ← C4, contratos, presupuestos
+│   ├── diseno/           ← wireframes, usuarios
+│   └── seguridad/        ← threat model
+└── .github/workflows/    ← CI pipeline</code></pre>
+<div class="cierre"><div class="checkpoint">
+<p><strong>Respondé sin mirar:</strong></p>
+<ol type="1">
+<li>¿Qué cuadernillo explica el concepto de ADR y cuál te dice cuándo y
+cómo crearlo?</li>
+<li>¿En qué carpeta de tu repo vive el modelo de amenazas?</li>
+</ol>
+</div></div></section>
+</section>
+<section id="mapa-del-proyecto" class="level1">
+<h1>Mapa del proyecto</h1>
+<blockquote>
+<p>Los 7 trabajos prácticos forman una cadena: cada uno consume el
+resultado del anterior y produce la entrada del siguiente.</p>
+</blockquote>
+<section id="cadena-de-producción" class="level2">
+<h2>Cadena de producción</h2>
+<pre><code>TP1 — SDD
+  SPEC v1 + ADR-001 + arnés v1
+  │
+  ├──→ TP2 — Arquitectura
+  │     C4 + ADR-002/003 + SPEC v2 + arnés v2
+  │     │
+  │     ├──→ TP3 — Interfaces
+  │     │     Personas + wireframes + ADR-004 + SPEC v3
+  │     │     │
+  │     │     ├──→ TP4 — API y Seguridad
+  │     │     │     OpenAPI + threat model + ADR-005 + SPEC v4 + arnés v3
+  │     │     │     │
+  │     │     │     ├──→ TP5 — Mobile
+  │     │     │     │     ADR-006 + presupuestos + SPEC v5
+  │     │     │     │     │
+  │     │     │     │     ├──→ TP6 — CI/CD
+  │     │     │     │     │     Pipeline + release v0.1.0 + postmortem + SPEC vFinal
+  │     │     │     │     │     │
+  │     │     │     │     │     └──→ TP Final — Defensa
+  │     │     │     │     │           Trazabilidad completa
+  │     │     │     │     │
+  │     │     │     │     Cuadernillo 03 → Sprint 3
+  │     │     │     │
+  │     │     │     Cuadernillo 03 → Sprint 3
+  │     │     │
+  │     │     Cuadernillo 03 → Sprint 2
+  │     │
+  │     Cuadernillo 03 → Sprint 2
+  │
+  Cuadernillo 03 → Sprint 1</code></pre>
+<div class="concepto">
+<p><strong>Trazabilidad:</strong> cada decisión, cada diagrama y cada
+línea de código debe poder rastrearse hasta un requisito de la SPEC. Si
+alguien pregunta “¿por qué esto es así?”, la respuesta está en los ADR.
+Si pregunta “¿dónde se verifica?”, la respuesta está en el CI.</p>
+</div>
+</section>
+<section id="proyecto-modelo-a-gobernanza-digital" class="level2">
+<h2>Proyecto modelo: A-gobernanza-digital</h2>
+<p>El repositorio <code>proyecto-adi-2026/03-proyectos/</code> contiene
+un proyecto completo de referencia que podés usar como guía: - SPEC y
+ADR reales (7 decisiones documentadas) - Diagramas C4 en 3 niveles -
+Código frontend y backend - Docker Compose para entorno local</p>
+<p>No copies su contenido textualmente. Usalo para entender <strong>cómo
+se ve</strong> un proyecto bien estructurado.</p>
+<blockquote>
+<p>VER EN EL REPO →
+<code>03-proyectos/A-gobernanza-digital/README.md</code></p>
+</blockquote>
+<div class="error">
+<p><strong>ERROR FRECUENTE:</strong> arrancar el TP2 sin tener el TP1
+mergeado. La SPEC es la base de todo; sin ella los ADR no tienen
+contexto y los diagramas C4 no tienen ancla.</p>
+</div>
+<div class="cierre"><div class="checkpoint">
+<p><strong>Respondé sin mirar:</strong></p>
+<ol type="1">
+<li>¿Qué artefacto producido en TP1 necesita TP2 para arrancar?</li>
+<li>¿Cuántos ADR acumula un proyecto que completó los 6 TP?</li>
+<li>¿Qué cuadernillo explica cómo se evalúa el proyecto?</li>
+</ol>
+</div></div></section>
+</section>
+<section id="tp1-de-vibe-coding-a-sdd" class="level1">
+<h1>TP1 — De Vibe Coding a SDD</h1>
+<blockquote>
+<p><strong>Qué producís:</strong> SPEC v1, ADR-001, arnés v1,
+repositorio configurado.</p>
+</blockquote>
+<p><strong>Objetivo:</strong> migrar tu proyecto a un repositorio
+individual dentro de la organización <code>IES9018</code>, gobernado por
+especificación formal y arnés de IA.</p>
+<section id="entrada" class="level2">
+<h2>Entrada</h2>
+<ul>
+<li>Repositorio público creado en
+<code>IES9018/&lt;tu_nombre&gt;-&lt;tu_proyecto&gt;</code> (sin
+fork)</li>
+</ul>
+</section>
+<section id="qué-producís" class="level2">
+<h2>Qué producís</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Artefacto</th>
+<th>Dónde va</th>
+<th>Plantilla</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SPEC.md</code></td>
+<td>Raíz del repo</td>
+<td><code>templates/SPEC-template.md</code></td>
+</tr>
+<tr>
+<td><code>docs/adr/ADR-001-stack-tecnologico.md</code></td>
+<td><code>docs/adr/</code></td>
+<td><code>templates/ADR-template.md</code></td>
+</tr>
+<tr>
+<td><code>.opencoderules</code></td>
+<td>Raíz del repo</td>
+<td>Arnés local</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="spec-el-contrato-del-sistema" class="level2">
+<h2>SPEC: el contrato del sistema</h2>
+<p>La SPEC describe propósito, alcance, requisitos funcionales numerados
+(RF-01, RF-02…), Non-Goals explícitos y contratos de datos. No es un
+documento de diseño: es contra lo que se mide si el código es
+correcto.</p>
+<div class="concepto">
+<p><strong>Non-Goals:</strong> lo que NO hace esta versión. Ej: “esta
+versión no maneja autenticación de usuarios”, “esta versión no genera
+reportes PDF”. Declararlos evita que la IA agregue funcionalidades no
+pedidas.</p>
+</div>
+</section>
+<section id="adr-001-decisión-de-stack" class="level2">
+<h2>ADR-001: decisión de stack</h2>
+<p>Documentá la elección de tecnologías (lenguaje, framework, base de
+datos) con al menos dos alternativas descartadas. Cada alternativa debe
+tener criterios objetivos: curva de aprendizaje, ecosistema,
+compatibilidad con el proyecto.</p>
+<blockquote>
+<p>VER CUADERNILLO 01 → ADR</p>
+</blockquote>
+</section>
+<section id="arnés-v1" class="level2">
+<h2>Arnés v1</h2>
+<p>Creá las primeras reglas que tu agente IA debe respetar: - Alcance
+permitido (carpetas, tipos de archivo) - Estándares obligatorios (tipado
+estricto, convención de commits) - Prácticas prohibidas
+(<code>any</code>, dependencias no aprobadas)</p>
+</section>
+<section id="spec-y-arnés-evolucionan" class="level2">
+<h2>SPEC y arnés evolucionan</h2>
+<p>La SPEC y el arnés NO se quedan quietos después del TP1. Cada TP los
+actualiza:</p>
+<table>
+<thead>
+<tr>
+<th>TP</th>
+<th>SPEC</th>
+<th>Arnés</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TP1</td>
+<td>v1</td>
+<td>v1</td>
+</tr>
+<tr>
+<td>TP2</td>
+<td>v2 (restricciones arquitectónicas)</td>
+<td>v2 (coherencia ADR)</td>
+</tr>
+<tr>
+<td>TP3</td>
+<td>v3 (criterios Gherkin, accesibilidad)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>TP4</td>
+<td>v4 (contratos referenciados)</td>
+<td>v3 (seguridad operativa)</td>
+</tr>
+<tr>
+<td>TP5</td>
+<td>v5 (RNF medibles)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>TP6</td>
+<td>vFinal (changelog completo)</td>
+<td>vFinal (consolidado)</td>
+</tr>
+</tbody>
+</table>
+<div class="proyecto">
+<p><strong>CUADERNILLO 03:</strong> este TP sienta las bases del Sprint
+1 de PP3. La SPEC y el arnés son requisitos de auditoría desde el día
+1.</p>
+</div>
+<blockquote>
+<p>VER EN EL REPO →
+<code>trabajos-practicos/tp1-sdd-y-arneses/README.md</code></p>
+</blockquote>
+<div class="cierre"><div class="checkpoint">
+<p><strong>Respondé sin mirar:</strong></p>
+<ol type="1">
+<li>¿Qué dos artefactos evolucionan a lo largo de todos los TP?</li>
+<li>¿Cuál es la diferencia entre un requisito funcional y un
+Non-Goal?</li>
+<li>¿Dónde se guarda el ADR-001 dentro de tu repo?</li>
+</ol>
+</div></div></section>
+</section>
+<section id="tp2-arquitectura-visible" class="level1">
+<h1>TP2 — Arquitectura Visible</h1>
+<blockquote>
+<p><strong>Qué producís:</strong> diagramas C4 (contexto +
+contenedores), ADR-002, ADR-003, SPEC v2, arnés v2.</p>
+</blockquote>
+<p><strong>Objetivo:</strong> hacer visible la arquitectura de tu
+sistema y registrar las decisiones estructurales.</p>
+<section id="entrada-1" class="level2">
+<h2>Entrada</h2>
+<ul>
+<li>Especificación inicial (SPEC v1 del TP1)</li>
+<li>Stack tecnológico decidido (ADR-001)</li>
+</ul>
+</section>
+<section id="qué-producís-1" class="level2">
+<h2>Qué producís</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Artefacto</th>
+<th>Dónde va</th>
+<th>Se entrega</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C4-contexto.md</td>
+<td><code>docs/arquitectura/</code></td>
+<td>Nivel 1: sistema como caja negra, actores, sistemas externos</td>
+</tr>
+<tr>
+<td>C4-contenedores.md</td>
+<td><code>docs/arquitectura/</code></td>
+<td>Nivel 2: aplicaciones, bases de datos, protocolos</td>
+</tr>
+<tr>
+<td>ADR-002 — Estilo arquitectónico</td>
+<td><code>docs/adr/</code></td>
+<td>Elegí entre capas, hexagonal, microservicios</td>
+</tr>
+<tr>
+<td>ADR-003 — Persistencia</td>
+<td><code>docs/adr/</code></td>
+<td>SQL vs NoSQL vs embebida</td>
+</tr>
+<tr>
+<td>SPEC v2</td>
+<td>Raíz</td>
+<td>Nueva sección: Restricciones arquitectónicas</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="diagramas-c4" class="level2">
+<h2>Diagramas C4</h2>
+<p>Cada diagrama responde una pregunta distinta. Si no podés escribir la
+pregunta al pie, el diagrama no cumple.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Nivel</th>
+<th>Pregunta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1 — Contexto</td>
+<td>¿Qué sistema estoy construyendo y con quién se relaciona?</td>
+</tr>
+<tr>
+<td>C2 — Contenedores</td>
+<td>¿Qué apps, servicios y bases de datos lo componen y cómo se
+comunican?</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>VER CUADERNILLO 01 → C4 Model</p>
+</blockquote>
+</section>
+<section id="regla-de-oro" class="level2">
+<h2>Regla de oro</h2>
+<p>Si un elemento no aparece en tu SPEC o en algún ADR, no puede
+aparecer en el diagrama. El diagrama documenta decisiones tomadas, no
+deseos.</p>
+</section>
+<section id="spec-v2" class="level2">
+<h2>SPEC v2</h2>
+<p>Agregá la sección <strong>Restricciones arquitectónicas</strong>
+citando ADR-001, ADR-002 y ADR-003. Actualizá el changelog
+(<code>v1 → v2</code>, fecha, motivo de cada cambio).</p>
+<div class="error">
+<p><strong>ERROR FRECUENTE:</strong> dibujar C4 antes de tener
+decisiones documentadas. Sin ADR no hay arquitectura que dibujar — tenés
+deseos, no decisiones.</p>
+</div>
+<blockquote>
+<p>VER EN EL REPO →
+<code>trabajos-practicos/tp2-arquitectura-visible/README.md</code></p>
+</blockquote>
+<div class="proyecto">
+<p><strong>CUADERNILLO 03:</strong> los diagramas C4 de este TP son los
+mismos que PP3 te pide verificar en el Sprint 2.</p>
+</div>
+<div class="cierre"><div class="checkpoint">
+<p><strong>Respondé sin mirar:</strong></p>
+<ol type="1">
+<li>¿Qué información se ve en un C1 que no se ve en un C2?</li>
+<li>¿Por qué no se puede dibujar un elemento en C4 si no aparece en la
+SPEC o en un ADR?</li>
+<li>¿Qué nuevo campo aparece en la SPEC v2 que no estaba en la v1?</li>
+</ol>
+</div></div></section>
+</section>
+<section id="tp3-interfaces-que-no-confunden" class="level1">
+<h1>TP3 — Interfaces que no Confunden</h1>
+<blockquote>
+<p><strong>Qué producís:</strong> personas, user journeys, wireframes de
+baja fidelidad, auditoría heurística, ADR-004, SPEC v3.</p>
+</blockquote>
+<p><strong>Objetivo:</strong> definir usuarios reales, sus recorridos
+críticos y diseñar las pantallas más importantes antes de escribir
+código.</p>
+<section id="entrada-2" class="level2">
+<h2>Entrada</h2>
+<ul>
+<li>Arquitectura definida (TP2)</li>
+<li>Restricciones arquitectónicas en SPEC v2</li>
+</ul>
+</section>
+<section id="qué-producís-2" class="level2">
+<h2>Qué producís</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Artefacto</th>
+<th>Dónde va</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Personas + journeys</td>
+<td><code>docs/diseno/usuarios.md</code></td>
+<td>2 personas, 2 user journeys en Mermaid</td>
+</tr>
+<tr>
+<td>Wireframes</td>
+<td><code>docs/diseno/wireframes/</code></td>
+<td>2 pantallas críticas en baja fidelidad</td>
+</tr>
+<tr>
+<td>Auditoría heurística</td>
+<td><code>docs/diseno/auditoria-heuristica.md</code></td>
+<td>Tabla 10 heurísticas de Nielsen</td>
+</tr>
+<tr>
+<td>ADR-004 — Stack UI</td>
+<td><code>docs/adr/</code></td>
+<td>Framework de interfaz elegido</td>
+</tr>
+<tr>
+<td>SPEC v3</td>
+<td>Raíz</td>
+<td>Criterios Gherkin, accesibilidad básica</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="personas-y-journeys" class="level2">
+<h2>Personas y journeys</h2>
+<p>Cada persona tiene nombre, rol, objetivo y frustración. No son
+genéricas: se basan en tu dominio real. Los journeys se modelan en
+Mermaid como diagramas de secuencia o flowchart.</p>
+<blockquote>
+<p>VER CUADERNILLO 01 → Heurísticas de usabilidad</p>
+</blockquote>
+</section>
+<section id="wireframes-de-baja-fidelidad" class="level2">
+<h2>Wireframes de baja fidelidad</h2>
+<p>Las dos pantallas críticas identificadas en los journeys. Cero
+colores: acá se discute estructura, no estética. Cada wireframe incluye:
+objetivo, entrada principal, error más probable y cómo lo previene.</p>
+</section>
+<section id="auditoría-heurística" class="level2">
+<h2>Auditoría heurística</h2>
+<p>Aplicá las 10 heurísticas de Nielsen sobre tus wireframes. Mínimo 3
+problemas reales detectados y corregidos. Un hallazgo sin corrección no
+cuenta.</p>
+</section>
+<section id="spec-v3" class="level2">
+<h2>SPEC v3</h2>
+<p>Los RF de interfaz ahora incluyen criterios de aceptación en formato
+<strong>Gherkin</strong> (Given/When/Then). Agregá un requisito de
+accesibilidad básica: navegación por teclado + contraste AA en las 2
+pantallas críticas.</p>
+<table>
+<thead>
+<tr>
+<th>Formato</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Given</strong> un usuario no autenticado</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>When</strong> accede a /turnos</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Then</strong> el sistema redirige a /login con código
+401</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="proyecto">
+<p><strong>CUADERNILLO 03:</strong> los wireframes y la decisión de
+stack UI son insumos del Sprint 2 de PP3.</p>
+</div>
+<blockquote>
+<p>VER EN EL REPO →
+<code>trabajos-practicos/tp3-diseno-interfaces-hci/README.md</code></p>
+</blockquote>
+<div class="cierre"><div class="checkpoint">
+<p><strong>Respondé sin mirar:</strong></p>
+<ol type="1">
+<li>¿Cuál es la diferencia entre un wireframe y un mockup?</li>
+<li>¿Qué significa que un requisito esté en formato Gherkin?</li>
+<li>¿Qué heurística de Nielsen se viola si el sistema no muestra qué
+está pasando después de que el usuario hace click en “Guardar”?</li>
+</ol>
+</div></div></section>
+</section>
+<section id="tp4-contratos-antes-que-código" class="level1">
+<h1>TP4 — Contratos antes que Código</h1>
+<blockquote>
+<p><strong>Qué producís:</strong> contrato OpenAPI, ADR-005, threat
+model, arnés v3, SPEC v4.</p>
+</blockquote>
+<p><strong>Objetivo:</strong> definir los contratos de tu API antes de
+implementar, con especificación formal y modelo de amenazas.</p>
+<section id="entrada-3" class="level2">
+<h2>Entrada</h2>
+<ul>
+<li>Wireframes y decisiones de interfaz (TP3)</li>
+<li>Criterios de aceptación en SPEC v3</li>
+</ul>
+</section>
+<section id="qué-producís-3" class="level2">
+<h2>Qué producís</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Artefacto</th>
+<th>Dónde va</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>api-contracts.yaml</code></td>
+<td><code>docs/arquitectura/</code></td>
+<td>OpenAPI 3.x, 5 endpoints críticos</td>
+</tr>
+<tr>
+<td>ADR-005 — Estrategia web</td>
+<td><code>docs/adr/</code></td>
+<td>SPA vs SSR vs MPA vs solo-API</td>
+</tr>
+<tr>
+<td>Threat model lite</td>
+<td><code>docs/seguridad/threat-model-lite.md</code></td>
+<td>5 amenazas STRIDE con mitigaciones</td>
+</tr>
+<tr>
+<td>Arnés v3</td>
+<td>Raíz</td>
+<td>Reglas de seguridad operativas</td>
+</tr>
+<tr>
+<td>SPEC v4</td>
+<td>Raíz</td>
+<td>Contratos referencian schemas YAML</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="openapi-contrato-primero" class="level2">
+<h2>OpenAPI: contrato primero</h2>
+<p>Los 5 endpoints críticos de tu SPEC se definen en OpenAPI 3.x antes
+de escribir código: path, método, parámetros, schemas request/response,
+códigos de error (400, 401, 404, 500 mínimo). El archivo debe pasar un
+linter (<code>@redocly/cli lint</code>).</p>
+<blockquote>
+<p>VER CUADERNILLO 01 → OpenAPI</p>
+</blockquote>
+</section>
+<section id="modelo-de-amenazas" class="level2">
+<h2>Modelo de amenazas</h2>
+<p>Aplicá STRIDE a tus 5 endpoints reales. Mínimo 5 amenazas concretas
+con mitigación referenciada al componente o regla de arnés que la
+previene.</p>
+<table>
+<thead>
+<tr>
+<th>Amenaza</th>
+<th>Mitigación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inyección SQL</td>
+<td>Validación en endpoint + regla de arnés</td>
+</tr>
+<tr>
+<td>Autenticación insuficiente</td>
+<td>JWT con security scheme en OpenAPI</td>
+</tr>
+<tr>
+<td>Exposición de datos sensibles</td>
+<td>Filtros de respuesta en endpoint</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>VER CUADERNILLO 03 → la evaluación de seguridad incluye este modelo
+de amenazas</p>
+</blockquote>
+<div class="error">
+<p><strong>ERROR FRECUENTE:</strong> implementar la API antes de definir
+el contrato. Si el contrato no existe, la IA genera endpoints
+arbitrarios y el frontend consume lo que hay, no lo que se acordó.</p>
+</div>
+<blockquote>
+<p>VER EN EL REPO →
+<code>trabajos-practicos/tp4-arquitectura-web/README.md</code></p>
+</blockquote>
+<div class="cierre"><div class="checkpoint">
+<p><strong>Respondé sin mirar:</strong></p>
+<ol type="1">
+<li>¿Qué archivo define los endpoints de tu API y qué formato usa?</li>
+<li>¿Qué columnas tiene la tabla del modelo de amenazas?</li>
+<li>¿Qué regla nueva agrega el arnés v3 que no estaba en la v2?</li>
+</ol>
+</div></div></section>
+</section>
+<section id="tp5-estrategia-mobile" class="level1">
+<h1>TP5 — Estrategia Mobile</h1>
+<blockquote>
+<p><strong>Qué producís:</strong> ADR-006, presupuestos de rendimiento,
+estrategia offline, SPEC v5, wireframe adaptativo.</p>
+</blockquote>
+<p><strong>Objetivo:</strong> decidir y documentar la estrategia mobile
+con métricas verificables.</p>
+<section id="entrada-4" class="level2">
+<h2>Entrada</h2>
+<ul>
+<li>API con contratos definidos (TP4)</li>
+<li>Wireframes de pantallas críticas (TP3)</li>
+</ul>
+</section>
+<section id="qué-producís-4" class="level2">
+<h2>Qué producís</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Artefacto</th>
+<th>Dónde va</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ADR-006 — Estrategia mobile</td>
+<td><code>docs/adr/</code></td>
+<td>Matriz de decisión con criterios</td>
+</tr>
+<tr>
+<td>Presupuestos de rendimiento</td>
+<td><code>docs/arquitectura/presupuestos-rendimiento.md</code></td>
+<td>LCP, INP, peso JS</td>
+</tr>
+<tr>
+<td>Estrategia offline</td>
+<td><code>docs/arquitectura/offline-sync.md</code></td>
+<td>Offline-first o Non-Goal justificado</td>
+</tr>
+<tr>
+<td>Wireframe adaptativo</td>
+<td><code>docs/diseno/wireframes/</code></td>
+<td>Pantallas críticas en breakpoint móvil</td>
+</tr>
+<tr>
+<td>SPEC v5</td>
+<td>Raíz</td>
+<td>RNF medibles (RNF-01…)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="matriz-de-decisión-mobile" class="level2">
+<h2>Matriz de decisión mobile</h2>
+<p>Compará las opciones (responsive web, PWA, nativa, cross-platform)
+contra criterios objetivos: costo de mantenimiento, necesidad offline,
+acceso a hardware, tiempo hasta el cierre.</p>
+<table>
+<thead>
+<tr>
+<th>Criterio</th>
+<th>Responsive</th>
+<th>PWA</th>
+<th>Nativa</th>
+<th>Cross-platform</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Costo 1 persona</td>
+<td>Bajo</td>
+<td>Medio</td>
+<td>Alto</td>
+<td>Medio</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="presupuestos-de-rendimiento" class="level2">
+<h2>Presupuestos de rendimiento</h2>
+<p>Definí números que puedas medir. Cada presupuesto incluye la
+herramienta concreta que lo verifica.</p>
+<table>
+<thead>
+<tr>
+<th>Métrica</th>
+<th>Presupuesto</th>
+<th>Herramienta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LCP (móvil)</td>
+<td>&lt; 2.5 s (4G)</td>
+<td>Lighthouse CI</td>
+</tr>
+<tr>
+<td>INP</td>
+<td>&lt; 200 ms</td>
+<td>Lighthouse CI</td>
+</tr>
+<tr>
+<td>Peso JS inicial</td>
+<td>&lt; 200 KB gzip</td>
+<td>source-map-explorer</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>VER CUADERNILLO 01 → Mobile / Offline-First</p>
+</blockquote>
+<div class="proyecto">
+<p><strong>CUADERNILLO 03:</strong> el ADR mobile y los presupuestos de
+rendimiento se evalúan en el Sprint 3 de PP3.</p>
+</div>
+<blockquote>
+<p>VER EN EL REPO →
+<code>trabajos-practicos/tp5-arquitectura-mobile/README.md</code></p>
+</blockquote>
+<div class="cierre"><div class="checkpoint">
+<p><strong>Respondé sin mirar:</strong></p>
+<ol type="1">
+<li>¿Qué ejemplo concreto de métrica presupuestada se puede medir en
+CI?</li>
+<li>¿Qué documento registra la decisión de estrategia mobile?</li>
+<li>Si tu dominio no requiere offline, ¿qué ponés en lugar de la
+estrategia offline?</li>
+</ol>
+</div></div></section>
+</section>
+<section id="tp6-integración-continua" class="level1">
+<h1>TP6 — Integración Continua</h1>
+<blockquote>
+<p><strong>Qué producís:</strong> pipeline CI, release v0.1.0, arnés
+vFinal, postmortem, SPEC vFinal.</p>
+</blockquote>
+<p><strong>Objetivo:</strong> automatizar las validaciones que antes
+hacías a mano y cerrar el cuatrimestre con un postmortem honesto.</p>
+<section id="entrada-5" class="level2">
+<h2>Entrada</h2>
+<ul>
+<li>Los 5 TP anteriores mergeados</li>
+<li>Contrato OpenAPI definido (TP4)</li>
+<li>Presupuestos de rendimiento (TP5)</li>
+</ul>
+</section>
+<section id="qué-producís-5" class="level2">
+<h2>Qué producís</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Artefacto</th>
+<th>Dónde va</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.github/workflows/ci.yml</code></td>
+<td>Raíz del repo</td>
+<td>Pipeline que lintea, testea y compila</td>
+</tr>
+<tr>
+<td>Release v0.1.0</td>
+<td>GitHub Releases</td>
+<td>Tag anotado + CHANGELOG</td>
+</tr>
+<tr>
+<td>Arnés vFinal</td>
+<td>Raíz del repo</td>
+<td>Consolidado de versiones anteriores</td>
+</tr>
+<tr>
+<td>Postmortem</td>
+<td><code>docs/postmortem-cuatrimestre.md</code></td>
+<td>3 incidentes reales con IA</td>
+</tr>
+<tr>
+<td>SPEC vFinal</td>
+<td>Raíz</td>
+<td>Changelog v1→vFinal completo</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="pipeline-ci" class="level2">
+<h2>Pipeline CI</h2>
+<p>Workflow que se ejecuta en cada PR hacia <code>main</code>: 1.
+<strong>Lint del contrato:</strong> valida
+<code>api-contracts.yaml</code> con <code>@redocly/cli lint</code> 2.
+<strong>Tests:</strong> corre la suite unitaria (mínimo 5 tests) 3.
+<strong>Build:</strong> compila el proyecto</p>
+<p>Agregá el badge de estado del CI al README. PR con CI rojo = merge
+prohibido.</p>
+<blockquote>
+<p>VER CUADERNILLO 01 → CI/CD y GitHub Actions</p>
+</blockquote>
+</section>
+<section id="release-v0.1.0" class="level2">
+<h2>Release v0.1.0</h2>
+<p><code>CHANGELOG.md</code> con formato Keep a Changelog: secciones por
+categoría (feat, fix, docs) y tag anotado sobre el commit de
+release.</p>
+</section>
+<section id="postmortem" class="level2">
+<h2>Postmortem</h2>
+<p>Tres incidentes reales donde la IA generó código incorrecto. Cada uno
+con: qué generó mal, cómo se detectó, qué capa lo previene (SPEC, ADR,
+arnés, CI, revisión humana).</p>
+<table>
+<thead>
+<tr>
+<th>Incidente</th>
+<th>Detección</th>
+<th>Capa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Endpoint inseguro</td>
+<td>Code review</td>
+<td>Arnés v3 + threat model</td>
+</tr>
+<tr>
+<td>Función que no compila</td>
+<td>CI build</td>
+<td>Pipeline</td>
+</tr>
+<tr>
+<td>Dependencia no autorizada</td>
+<td>ADR check</td>
+<td>Arnés v2</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="spec-vfinal" class="level2">
+<h2>SPEC vFinal</h2>
+<p>Estado “congelado para la defensa”: changelog completo v1→vFinal y
+trazabilidad ADR ↔︎ restricciones vigentes.</p>
+<blockquote>
+<p>VER EN EL REPO →
+<code>trabajos-practicos/tp6-integracion-continua/README.md</code></p>
+</blockquote>
+<div class="cierre"><div class="checkpoint">
+<p><strong>Respondé sin mirar:</strong></p>
+<ol type="1">
+<li>¿Qué impide que un PR con CI rojo se mergee?</li>
+<li>¿Qué tres artefactos produce el TP6 además del pipeline?</li>
+<li>¿Qué información registra el postmortem?</li>
+</ol>
+</div></div></section>
+</section>
+<section id="tp-final-defensa" class="level1">
+<h1>TP Final — Defensa</h1>
+<blockquote>
+<p><strong>Qué producís:</strong> recorrido guiado + una decisión con
+arrepentimiento + evidencia de trazabilidad.</p>
+</blockquote>
+<p><strong>Objetivo:</strong> sostener cada decisión de tu repositorio
+frente a preguntas.</p>
+<section id="condiciones-de-admisión" class="level2">
+<h2>Condiciones de admisión</h2>
+<table>
+<thead>
+<tr>
+<th>Requisito</th>
+<th>Verificación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TP1–TP6 mergeados</td>
+<td>Historial de PRs</td>
+</tr>
+<tr>
+<td>CI en verde en <code>main</code></td>
+<td>Badge + run del pipeline</td>
+</tr>
+<tr>
+<td>Release v0.1.0 etiquetada</td>
+<td>Tags del repo</td>
+</tr>
+<tr>
+<td>Arnés consolidado final</td>
+<td><code>.opencoderules</code></td>
+</tr>
+<tr>
+<td>Postmortem con evidencia</td>
+<td><code>docs/postmortem-cuatrimestre.md</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="estructura-de-la-defensa" class="level2">
+<h2>Estructura de la defensa</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Minuto</th>
+<th>Qué hacés</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>Recorrido guiado: <code>main</code> → SPEC → ADRs → C4 → CI →
+release</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Una decisión con arrepentimiento: elegí un ADR, explicá qué harías
+distinto</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Demo de pantalla crítica o Non-Goal justificado</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Preguntas del docente</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>VER CUADERNILLO 03 → los criterios de evaluación detallados están en
+las rúbricas de PP3</p>
+</blockquote>
+<blockquote>
+<p>VER EN EL REPO →
+<code>trabajos-practicos/tp-final-integrador/README.md</code></p>
+</blockquote>
+<div class="recorda">
+<p><strong>No se necesitan slides.</strong> La defensa es sobre tu
+repositorio. Si la respuesta está documentada, la encontrás navegando.
+Si no está documentada, la defensa expone el vacío.</p>
+</div>
+<div class="cierre"><div class="checkpoint">
+<p><strong>Respondé sin mirar:</strong></p>
+<ol type="1">
+<li>¿Cuánto dura la defensa y cómo se distribuye el tiempo?</li>
+<li>¿Qué pasa si llegás al TP Final sin tener los TP1–6 mergeados?</li>
+<li>¿Qué es una “decisión con arrepentimiento”?</li>
+</ol>
+</div></div></section>
+</section>
+<section id="proyecto-modelo-y-plantillas" class="level1">
+<h1>Proyecto Modelo y Plantillas</h1>
+<blockquote>
+<p>Cada TP produce artefactos a partir de plantillas. El proyecto modelo
+muestra cómo se ve el resultado final.</p>
+</blockquote>
+<section id="proyecto-modelo-a-gobernanza-digital-1" class="level2">
+<h2>Proyecto modelo: A-gobernanza-digital</h2>
+<p>El repositorio <code>proyecto-adi-2026</code> contiene un proyecto
+completo de referencia en
+<code>03-proyectos/A-gobernanza-digital/</code>. No es una plantilla que
+copies: es una guía de cómo se estructura un proyecto real.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Componente</th>
+<th>Ruta en el proyecto modelo</th>
+<th>Lo muestra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>README del proyecto</td>
+<td><code>README.md</code></td>
+<td>Visión general, estructura, cómo correrlo</td>
+</tr>
+<tr>
+<td>Especificación</td>
+<td><code>01_PLAN_MAESTRO/vision.md</code></td>
+<td>Cómo se ve una visión de proyecto</td>
+</tr>
+<tr>
+<td>Casos de uso</td>
+<td><code>02_CASOS_DE_USO/</code></td>
+<td>CU-01 a CU-05 con diagramas</td>
+</tr>
+<tr>
+<td>Arquitectura</td>
+<td><code>03_ARQUITECTURA/</code></td>
+<td>Diagramas C4, ADR-001 a ADR-007, hexagonal</td>
+</tr>
+<tr>
+<td>Código fuente</td>
+<td><code>08_CODIGO_FUENTE/</code></td>
+<td>Frontend React/TypeScript</td>
+</tr>
+<tr>
+<td>Infraestructura</td>
+<td><code>docker-compose.yml</code>, <code>nginx.conf</code></td>
+<td>Despliegue local</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>VER EN EL REPO →
+<code>03-proyectos/A-gobernanza-digital/README.md</code></p>
+</blockquote>
+</section>
+<section id="mapa-de-plantillas" class="level2">
+<h2>Mapa de plantillas</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Artefacto</th>
+<th>Plantilla</th>
+<th>Dónde se guarda en tu repo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SPEC</td>
+<td><code>templates/SPEC-template.md</code> → <code>SPEC.md</code></td>
+<td>Raíz</td>
+</tr>
+<tr>
+<td>ADR</td>
+<td><code>templates/ADR-template.md</code> →
+<code>docs/adr/ADR-NNN-titulo.md</code></td>
+<td><code>docs/adr/</code></td>
+</tr>
+<tr>
+<td>PR template</td>
+<td><code>.github/PULL_REQUEST_TEMPLATE.md</code></td>
+<td>(automático en GitHub)</td>
+</tr>
+</tbody>
+</table>
+<div class="error">
+<p><strong>ERROR FRECUENTE:</strong> tomar el proyecto modelo como
+plantilla literal y copiar sus decisiones (stack, estructura, ADR) sin
+adaptarlas a tu dominio. El proyecto modelo muestra <strong>cómo
+documentar</strong>, no <strong>qué documentar</strong>.</p>
+</div>
+<div class="concepto">
+<p><strong>Plantilla ≠ Ejemplo ≠ Entrega.</strong> La plantilla es el
+formato vacío. El ejemplo es el proyecto modelo completo. La entrega es
+tu propio contenido siguiendo la plantilla, adaptado a tu dominio.</p>
+</div>
+<blockquote>
+<p>VER EN EL REPO → <code>templates/</code> para SPEC-template.md y
+ADR-template.md</p>
+</blockquote>
+<div class="cierre"><div class="checkpoint">
+<p><strong>Respondé sin mirar:</strong></p>
+<ol type="1">
+<li>¿Cuál es la diferencia entre una plantilla y el proyecto
+modelo?</li>
+<li>¿Dónde está la plantilla de SPEC en el repositorio?</li>
+<li>¿Cuántos ADR documenta el proyecto modelo A-gobernanza-digital?</li>
+</ol>
+</div></div></section>
+</section>
+<section id="cadena-de-trazabilidad-completa" class="level1">
+<h1>Cadena de trazabilidad completa</h1>
+<p>Cada sección de este cuadernillo mostró un eslabón de la cadena.
+Juntos forman el ciclo completo:</p>
+<pre><code>Necesidad de negocio
+  ↓
+SPEC (TP1) — contrato del sistema
+  ↓
+ADR (TP1-TP6) — decisiones documentadas
+  ↓
+C4 (TP2) — arquitectura visible
+  ↓
+Wireframes (TP3) — interfaz pensada
+  ↓
+OpenAPI (TP4) — contrato de API
+  ↓
+Threat model (TP4) — seguridad diseñada
+  ↓
+Mobile (TP5) — estrategia multiplataforma
+  ↓
+CI/CD (TP6) — automatización y calidad
+  ↓
+Defensa (TP Final) — trazabilidad demostrada</code></pre>
+<div class="importa">
+<p><strong>Lo que sigue:</strong> tu repositorio individual, con todos
+los TP mergeados y los artefactos completos, es la entrada del
+Cuadernillo 03 — PP3, que coordina los sprints, la auditoría y la
+evaluación final.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Cuadernillo</th>
+<th>Te sirve para</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>01 — Teoría</strong></td>
+<td>Entender los conceptos que aplicás acá</td>
+</tr>
+<tr>
+<td><strong>03 — PP3</strong></td>
+<td>Coordinar cuándo y cómo se evalúa cada artefacto</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>VER EN EL REPO → <code>README.md</code> del proyecto-adi-2026 para el
+roadmap completo de TP y sus fechas.</p>
+</blockquote>
+<div class="recorda">
+<p><strong>El repositorio de proyecto (<code>proyecto-adi-2026</code>)
+tiene el desarrollo completo de cada TP, ejercicios guiados, el proyecto
+modelo y las plantillas.</strong> Este cuadernillo te da el mapa de
+aplicación; el repo es el territorio de las consignas.</p>
+</div>
+<div class="cierre"><div class="checkpoint">
+<p><strong>Revisión final:</strong></p>
+<ol type="1">
+<li>Revisá los checkpoints de las unidades donde tengas dudas.</li>
+<li>Verificá que tu repositorio tenga los artefactos que cada unidad
+menciona.</li>
+<li>Cuando el docente publique un TP, este cuadernillo te dice qué
+producir y con qué plantilla.</li>
+</ol>
+</div></div></section>
+</body>
+</html>
